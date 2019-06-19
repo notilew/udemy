@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Curso JavaScript Completo</title>
+  <script>
+    /* undefined */
+    var nome;
+
+    console.log('O valor de nome é: ' + nome);
+
+    /* null */
+    var carro = null;
+
+    console.log('O valor de carro é: ' + carro);
+
+    /* NaN */
+    var a = 10;
+    var b = 'texto';
+
+    console.log('A multiplicação de A por B é: ' + (a * b));
+
+    /* infinity */
+    var c = 2e308;
+    var d = -2e308;
+
+    console.log('O valor de c é: ' + c);
+    console.log('O valor de d é: ' + d);
+  </script>
+</head>
+
+<body>
+  <h1>Curso JavaScript Completo</h1>
+
+  <h2>Sistema Léxico</h2>
+  <p>
+    O sistema léxico são as regras de sintaxe da linguagem que devem ser seguidas para que o navegador possa entender cada instrução declarada no código.
+  </p>
+
+  <h2>Sistema Léxico do JavaScript</h2>
+  <dl>
+    <dt>Case-Sensitive</dt>
+    <dd>
+      O JavaScript é uma linguagem case-sensitive, ou seja, a forma como são escritas variáveis, funções, comandos e etc são relevantes para o interpretador de códigos do navegador. Então a variável: <code>var nome = 'Wellington Felix';</code> é diferente
+      da variável <code>var Nome = 'Wellington Felix';</code>
+    </dd>
+
+    <dt>Comentários</dt>
+    <dd>
+      Os comentários são linhas que servem de instrução ou anotação para o desenvolvedor, mas são descartadas pelo interpretador de códigos do navegador. No JavaScript podemos usar dois tipos de comentários: <code>// var a = 123; - Comentário de um única linha</code>      ou <code>/* */ var a = 132 - Comentário de múltiplas linhas</code>.
+    </dd>
+
+    <dt>Declarações</dt>
+    <dd>
+      Uma declaração é uma instrução em código escrita no arquivo JavaScript. Para realizar mais de uma declaração na mesma linha é necessário utilizar o sinal de (;) ao término de cada instrução de código, também é possível dar uma quebra de linha e separar
+      cada declaração em uma linha com ou sem o sinal de (;), mas é uma boa prática utilizar o sinal.
+    </dd>
+
+    <dt>Valores Literais</dt>
+    <dd>
+      São valores atribuidos diretamente a variáveis, arrays ou objetos no JavaScript. Exemplos:
+      <code>var nome = 'Wellington Felix'</code> <code>var numero = 123;</code> <code>var objeto { nome: 'Wellington Felix' };</code> <code>var frutas = ['maça', 'laranja', 'una];</code>.
+    </dd>
+
+    <dt>Caracter de Escape</dt>
+    <dd>
+      Podemos escrever strings utilizando uma combinação de aspas duplas com aspas simples ou aspas simples com aspas duplas. O caractere de escape (\) é utilizado quando é necessário abrir, fechar a string e dentro dessa, exibir as aspas duplas ou simples.
+      Exemplo: <code>var frase = "O \"HTML\" é para estrutura"</code> ou <code>var frase = 'O \'HTML\' é para estrutura'</code>
+    </dd>
+
+    <dt>Variáveis</dt>
+    <dd>
+      <strong>var</strong>: Utilizado para receber valores variáveis com escopo global. <strong>let</strong>: Utilizado para receber valores variáveis com escopo local. <strong>const</strong>: Utilizado para receber valores imutáveis.
+    </dd>
+
+    <dt>Undefined</dt>
+    <dd>Valor atribuído a uma variável ou constante que não possui nenhum valor.</dd>
+
+    <dt>Null</dt>
+    <dd>Valor atribuído a uma variável quando se deseja que o seu valor seja nulo.</dd>
+
+    <dt>NaN</dt>
+    <dd>
+      Valor atribuído a uma variável quando o resultado de um cálculo não é um número. Uma forma de entender é pensar por exemplo, 2e2 em potência na base 10. 2e2 é o mesmo que 2 x 10² = 200, ou 2e3 é o mesmo que 2 x 10³, ou seja, 2 * 10 * 10 * 10 = 2000. Para
+      o nosso exemplo do tipo de dados infinity, faremos o cálculo 2e308 ou -2e308.
+    </dd>
+
+    <dt>Infinity</dt>
+    <dd>São valores muito grande que o JavaScript não consegue representar</dd>
+
+    <dt>Objeto Window</dt>
+    <dd>
+      Objeto global (raíz) do JavaScript no browser, dentro dele estão funções como alert e também qualquer variável declarada no escopo do nosso código.
+    </dd>
+
+    <dt>this</dt>
+    <dd>Representa o objeto no contexto atual.</dd>
+  </dl>
+</body>
+
+</html>
