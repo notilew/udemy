@@ -1,3 +1,7 @@
+function recuperaValorDoBotao(valor) {
+
+}
+
 var n1 = undefined;
 
 n1 = 0;
