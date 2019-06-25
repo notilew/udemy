@@ -2,56 +2,56 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title>Calculadora Online - Básica</title>
-    <link type="text/css" rel="stylesheet" href="css/calculadora.css">
+  <meta charset="utf-8">
+  <title>Calculadora Online - Básica</title>
+  <link type="text/css" rel="stylesheet" href="css/calculadora.css">
 </head>
 
 <body>
-    <h1>Calculadora Online - Básica</h1>
+  <h1>Calculadora Online - Básica</h1>
 
-    <h3>Faça cálculos básicos com esta calculadora fácil e poderosa.</h3>
+  <h3>Faça cálculos básicos com esta calculadora fácil e poderosa.</h3>
 
-    <form>
-        <input id="resultado" type="text" value="0">
+  <form>
+    <input id="resultado" type="text" value="0">
 
-        <p>
-            <button type="button" onclick="pegaValorDoBotao('(')">(</button>
-            <button type="button" onclick="pegaValorDoBotao(')')">)</button>
-            <button type="button" onclick="pegaValorDoBotao('%')">%</button>
-            <button type="button" onclick="pegaValorDoBotao('ac')">AC</button>
-        </p>
+    <p>
+      <button type="button" onclick="pegaValorDoBotao('(')">(</button>
+      <button type="button" onclick="pegaValorDoBotao(')')">)</button>
+      <button type="button" onclick="pegaValorDoBotao('%')">%</button>
+      <button type="button" onclick="pegaValorDoBotao('ac')">AC</button>
+    </p>
 
-        <p>
-            <button type="button" onclick="pegaValorDoBotao('7')">7</button>
-            <button type="button" onclick="pegaValorDoBotao('8')">8</button>
-            <button type="button" onclick="pegaValorDoBotao('9')">9</button>
-            <button type="button" onclick="pegaValorDoBotao('/')">/</button>
-        </p>
+    <p>
+      <button type="button" onclick="recuperaNumeros('7')">7</button>
+      <button type="button" onclick="recuperaNumeros('8')">8</button>
+      <button type="button" onclick="recuperaNumeros('9')">9</button>
+      <button type="button" onclick="pegaValorDoBotao('/')">/</button>
+    </p>
 
-        <p>
-            <button type="button" onclick="pegaValorDoBotao('4')">4</button>
-            <button type="button" onclick="pegaValorDoBotao('5')">5</button>
-            <button type="button" onclick="pegaValorDoBotao('6')">6</button>
-            <button type="button" onclick="pegaValorDoBotao('*')">x</button>
-        </p>
+    <p>
+      <button type="button" onclick="recuperaNumeros('4')">4</button>
+      <button type="button" onclick="recuperaNumeros('5')">5</button>
+      <button type="button" onclick="recuperaNumeros('6')">6</button>
+      <button type="button" onclick="pegaValorDoBotao('*')">x</button>
+    </p>
 
-        <p>
-            <button type="button" onclick="pegaValorDoBotao('1')">1</button>
-            <button type="button" onclick="pegaValorDoBotao('2')">2</button>
-            <button type="button" onclick="pegaValorDoBotao('3')">3</button>
-            <button type="button" onclick="pegaValorDoBotao('-')">-</button>
-        </p>
+    <p>
+      <button type="button" onclick="recuperaNumeros('1')">1</button>
+      <button type="button" onclick="recuperaNumeros('2')">2</button>
+      <button type="button" onclick="recuperaNumeros('3')">3</button>
+      <button type="button" onclick="pegaValorDoBotao('-')">-</button>
+    </p>
 
-        <p>
-            <button type="button" onclick="pegaValorDoBotao('0')">0</button>
-            <button type="button" onclick="pegaValorDoBotao('.')">.</button>
-            <button type="button" onclick="pegaValorDoBotao('=')">=</button>
-            <button type="button" onclick="pegaValorDoBotao('+')">+</button>
-        </p>
-    </form>
+    <p>
+      <button type="button" onclick="recuperaNumeros('0')">0</button>
+      <button type="button" onclick="pegaValorDoBotao('.')">.</button>
+      <button type="button" onclick="pegaValorDoBotao('=')">=</button>
+      <button type="button" onclick="pegaValorDoBotao('+')">+</button>
+    </p>
+  </form>
 
-    <script src="js/calculadora.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
