@@ -1,7 +1,3 @@
-function recuperaNumeros(numero) {
-  teste(numero);
-}
-
-function teste() {
-  s
-}
+var logMyName = (function(name) {
+    console.log(name);
+})('wellington');

@@ -2,150 +2,171 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <title>Curso JavaScript Completo</title>
-  <script>
-    // função literal
-    function somar(n1, n2) {
-      // escopo da função
-      return n1 + n2;
-    }
+    <meta charset="utf-8">
+    <title>Curso JavaScript Completo</title>
 
-    var soma = somar(10, 20);
+    <script>
+        // função literal
+        function somar(n1, n2) {
+            // escopo da função
+            return n1 + n2;
+        }
 
-    console.log('resultado da soma: ', soma);
+        var soma = somar(10, 20);
 
-    /*-----------------------------------------*/
+        console.log('resultado da soma: ', soma);
 
-    // função de primeira classe
-    somar.propriedade = 'função que soma dois números';
+        /*-----------------------------------------*/
 
-    console.log(somar.propriedade);
+        // função de primeira classe
+        somar.propriedade = 'função que soma dois números';
 
-    /*-----------------------------------------*/
+        console.log(somar.propriedade);
 
-    // função anônima
-    var subtrair = function(n1, n2) {
-      var subtracao = n1 - n2;
+        /*-----------------------------------------*/
 
-      console.log('resultado da subtração: ', subtracao);
-    };
+        // função anônima
+        var subtrair = function(n1, n2) {
+            var subtracao = n1 - n2;
 
-    subtrair.propriedade = 'função que subtrai dois números';
+            console.log('resultado da subtração: ', subtracao);
+        };
 
-    subtrair(50, 25);
+        subtrair.propriedade = 'função que subtrai dois números';
 
-    console.log(subtrair.propriedade);
+        subtrair(50, 25);
 
-    /*-----------------------------------------*/
+        console.log(subtrair.propriedade);
 
-    var multiplicar = function(funcao) {
-      funcao(25, 25);
-    };
+        /*-----------------------------------------*/
 
-    multiplicar(function(n1, n2) {
-      var multiplicacao = n1 * n2;
+        var multiplicar = function(funcao) {
+            funcao(25, 25);
+        };
 
-      console.log('resultado da multiplicação: ', multiplicacao);
-    });
+        multiplicar(function(n1, n2) {
+            var multiplicacao = n1 * n2;
 
-    multiplicar.propriedade = 'função que multiplica dois números';
+            console.log('resultado da multiplicação: ', multiplicacao);
+        });
 
-    console.log(multiplicar.propriedade);
+        multiplicar.propriedade = 'função que multiplica dois números';
 
-    /*-----------------------------------------*/
+        console.log(multiplicar.propriedade);
 
-    // escopo global
-    var nome = 'wellington felix';
+        /*-----------------------------------------*/
 
-    function exibeNome() {
-      // escopo local
-      console.log('o nome é: ', nome);
-    }
+        // escopo global
+        var nome = 'wellington felix';
 
-    exibeNome();
+        function exibeNome() {
+            // escopo local
+            console.log('o nome é: ', nome);
+        }
 
-    /*-----------------------------------------*/
+        exibeNome();
 
-    // escopo global
-    var numero = 1;
+        /*-----------------------------------------*/
 
-    function exibeNumero() {
-      // escopo local
-      var numero = 2;
+        // escopo global
+        var numero = 1;
 
-      console.log('o número dentro da função é: ', numero);
-    }
+        function exibeNumero() {
+            // escopo local
+            var numero = 2;
 
-    console.log('o número fora da função é: ', numero);
-    exibeNumero();
+            console.log('o número dentro da função é: ', numero);
+        }
 
-    /*-----------------------------------------*/
+        console.log('o número fora da função é: ', numero);
+        exibeNumero();
 
-    // Função autoexecutável - IIFE
-    (function() {
-      // comando que impede a criação de variáveis sem o comando var
-      'use strict';
+        /*-----------------------------------------*/
 
-      // escopo local
-      var sobrenome = 'felix';
+        // Função autoexecutável - IIFE
+        (function() {
+            // comando que impede a criação de variáveis sem o comando var
+            'use strict';
 
-      function exibeSobrenome() {
-        console.log('o sobrenome é: ', sobrenome);
-      }
+            // escopo local
+            var sobrenome = 'felix';
 
-      exibeSobrenome();
-    })();
+            function exibeSobrenome() {
+                console.log('o sobrenome é: ', sobrenome);
+            }
 
-    console.log(sobrenome);
-  </script>
+            exibeSobrenome();
+        })();
+
+        /*-----------------------------------------*/
+
+        // IIFE utilizando a propriedade arguments
+        (function() {
+            'use strict';
+
+            function somar() {
+                var resultado = 0;
+                var i = 0;
+
+                while (arguments[i]) {
+                    resultado += arguments[i];
+
+                    i++;
+                }
+
+                return resultado;
+            }
+
+            console.log('o resultado é: ', somar(50, 50, 50));
+        })();
+    </script>
 </head>
 
 <body>
-  <h1>Curso JavaScript Completo</h1>
+    <h1>Curso JavaScript Completo</h1>
 
-  <h2>Funções</h2>
+    <h2>Funções</h2>
 
-  <h3>Literais</h3>
-  <p>
-    São funções escrita no formato padrão da linguagem utilizando a palavra reservada <strong>function</strong>, o nome da função e o corpo da função.
-  </p>
-  <p>
-    <code>
+    <h3>Literais</h3>
+    <p>
+        São funções escrita no formato padrão da linguagem utilizando a palavra reservada <strong>function</strong>, o nome da função e o corpo da função.
+    </p>
+    <p>
+        <code>
       <strong>function</strong> nomeDaFuncao() { <br>
         &nbsp;return n1 + n2; <br>
       }
     </code>
-  </p>
+    </p>
 
-  <p>
-    Funções em JavaScript são cidadãs de primeira classe, isso significa que uma função pode ser tratada como um objeto, ou seja, pode ter propriedades.
-  </p>
-  <p>
-    <code>
+    <p>
+        Funções em JavaScript são cidadãs de primeira classe, isso significa que uma função pode ser tratada como um objeto, ou seja, pode ter propriedades.
+    </p>
+    <p>
+        <code>
       <strong>nomeDaFuncao</strong>.propriedade = 'função que soma dois números.'; <br>
       &nbsp;console.log(<strong>nomeDaFuncao</strong>.propriedade);
     </code>
-  </p>
+    </p>
 
-  <p>
-    Funções em JavaScript podem ser anônimas, ou seja, não precisam possuir um nome, pode-se criar uma variável e atribuir uma função a ela.
-  </p>
-  <p>
-    <code>
+    <p>
+        Funções em JavaScript podem ser anônimas, ou seja, não precisam possuir um nome, pode-se criar uma variável e atribuir uma função a ela.
+    </p>
+    <p>
+        <code>
       <strong>var</strong> imprimir = <strong>function</strong>(str) { <br>
         &nbsp;console.log(str); <br>
       }; <br>
       
       imprimir('testando função anônima');
     </code>
-  </p>
+    </p>
 
-  <p>
-    Funções em JavaScript podem ser passadas como parâmetros.
-  </p>
-  <p>
-    <code>
+    <p>
+        Funções em JavaScript podem ser passadas como parâmetros.
+    </p>
+    <p>
+        <code>
       <strong>var</strong> imprimir = <strong>function</strong>(funcao) { <br>
         &nbsp;funcao(); <br>
       }; <br>
@@ -154,23 +175,23 @@
         &nbsp;console.log('função passada por parâmetro'); <br>
       });
     </code>
-  </p>
+    </p>
 
-  <h2>Escopo Global e Escopo Local</h2>
-  <p>
-    Em JavaScript qualquer variável criada fora do corpo de uma função possui escopo global, ou seja, essa variável poderá ser acessada através do objeto principal <strong>window</strong>. As variáveis com escopo global podem ser acessadas dentro de uma
-    função sem a necessidade do comando <strong>var</strong>, pode-se apenas chamar o nome da variável declarada no escopo gloabal e seu valor poderá ser alterado dentro da função. Já as variáveis criadas dentro do corpo de uma função possui escopo local,
-    nesse caso, essas variáveis só existem dentro da função e enquanto essa estiver sendo executada, ao término da execução as variáveis com escopo local serão deletadas.
-  </p>
+    <h2>Escopo Global e Escopo Local</h2>
+    <p>
+        Em JavaScript qualquer variável criada fora do corpo de uma função possui escopo global, ou seja, essa variável poderá ser acessada através do objeto principal <strong>window</strong>. As variáveis com escopo global podem ser acessadas dentro
+        de uma função sem a necessidade do comando <strong>var</strong>, pode-se apenas chamar o nome da variável declarada no escopo gloabal e seu valor poderá ser alterado dentro da função. Já as variáveis criadas dentro do corpo de uma função possui
+        escopo local, nesse caso, essas variáveis só existem dentro da função e enquanto essa estiver sendo executada, ao término da execução as variáveis com escopo local serão deletadas.
+    </p>
 
-  <h2>Funções AutoExecutáveis - IIFE</h2>
-  <p>
-    Em JavaScript podemos usar o conceito de <strong>Funções Auto Executáveis</strong> que evita a poluição do objeto
-    <strong>window</strong> com variáveis globais, utilizando esse conceito em seus scripts todas as variáveis terão escopo local e evitará possivéis conflitos com mesmos nomes de variáveis no escopo global em diferentes scripts. Para isso, é necessário
-    criar uma função anônima envolta por dois parênteses e ao final do parênteses de fechamento, usamos mais dois parênteses indicando que estamos executando essa função quando o script for iniciado.
-  </p>
-  <p>
-    <code>
+    <h2>Funções AutoExecutáveis - IIFE</h2>
+    <p>
+        Em JavaScript podemos usar o conceito de <strong>Funções Auto Executáveis</strong> que evita a poluição do objeto
+        <strong>window</strong> com variáveis globais, utilizando esse conceito em seus scripts todas as variáveis terão escopo local e evitará possivéis conflitos com mesmos nomes de variáveis no escopo global em diferentes scripts. Para isso, é necessário
+        criar uma função anônima envolta por dois parênteses e ao final do parênteses de fechamento, usamos mais dois parênteses indicando que estamos executando essa função quando o script for iniciado.
+    </p>
+    <p>
+        <code>
       &lt;<strong>script</strong>&gt;<br>
       &nbsp;// Função anônima autoexecutável<br>
       &nbsp;(<strong>function</strong>() {<br>
@@ -180,7 +201,34 @@
       &nbsp;})();<br>
       &lt;/<strong>script</strong>&gt;
     </code>
-  </p>
+    </p>
+
+    <h2>Propriedade Arguments</h2>
+    <p>
+        É uma propriedade das funções em JavaScript que guarda a quantidade de argumentos que foram passados. Pode-se acessá-la e recuperar os valores para realização de cálculos entre outros.
+    </p>
+    <p>
+        <code>
+            (<strong>function</strong>() {<br>
+                &nbsp;'use strict';<br>
+    
+                &nbsp;<strong>function</strong> somar() {<br>
+                    &nbsp;&nbsp;<strong>var</strong> resultado = 0;<br>
+                    &nbsp;&nbsp;<strong>var</strong> i = 0;<br>
+    
+                    &nbsp;&nbsp;<strong>while</strong> (<strong>arguments</strong>[i]) {<br>
+                        &nbsp;&nbsp;&nbsp;resultado += <strong>arguments</strong>[i];<br>
+    
+                        &nbsp;&nbsp;&nbsp;i++;<br>
+                    &nbsp;&nbsp;}<br>
+    
+                        &nbsp;&nbsp;<strong>return</strong> resultado;<br>
+                    &nbsp;}<br>
+    
+                    &nbsp;<strong>console.log</strong>('o resultado é: ', somar(50, 50, 50));<br>
+            })();<br>
+        </code>
+    </p>
 </body>
 
 </html>

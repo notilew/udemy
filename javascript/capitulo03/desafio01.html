@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Curso de JavaScript Completo - Desafio</title>
+
+    <script>
+        // 1 - calcular média - primeira tentativa
+        var calcularMedia = (function() {
+            'use strict';
+
+            return function() {
+                var soma = 0;
+                var media = 0;
+                var i = 0;
+
+                while (arguments[i]) {
+                    soma += arguments[i];
+
+                    i++;
+                }
+
+                media = soma / arguments.length;
+
+                return media;
+            }
+        })();
+
+        // console.log(calcularMedia(1, 1, 2, 3, 5));
+
+        /* ------------------------------------------- */
+
+        // 1 - calcular média - segunda tentativa
+        (function() {
+            'use strict';
+
+            function calculaMedia() {
+                var soma = 0;
+
+                for (var i = 0; i < arguments.length; i++) {
+                    soma += arguments[i];
+                }
+
+                return soma / arguments.length;
+            }
+
+            var media1 = calculaMedia(4, 0, 10, 10);
+
+            console.log('a média 01 é:', media1);
+        })();
+
+        /* ------------------------------------------- */
+
+        // 2 - calcular o índice de massa corporal (IMC)
+        (function() {
+            'use strict';
+
+            function calculaIMC(peso, altura) {
+                return (peso / (altura * altura));
+            }
+
+            function classificaIMC(imc) {
+                if (imc <= 16.9) {
+                    return 'muito abaixo do peso';
+                } else if (imc <= 18.4) {
+                    return 'abaixo do peso';
+                } else if (imc <= 24.9) {
+                    return 'peso normal';
+                } else if (imc <= 29.9) {
+                    return 'acima do peso';
+                } else if (imc <= 34.9) {
+                    return 'obesidade grau 1';
+                } else if (imc <= 40) {
+                    return 'obesidade grau 2';
+                } else {
+                    return 'obesidade grau 3';
+                }
+            }
+
+            /* var imc = calculaIMC(80, 1.75);
+
+            console.log('o imc é: ', imc.toFixed(1));
+            console.log(classificaIMC(imc.toFixed(1))); */
+
+            console.log(classificaIMC(calculaIMC(80, 1.75)));
+        })();
+    </script>
+</head>
+
+<body>
+    <h1>Curso de JavaScript Completo - Desafio</h1>
+
+    <h2>Problema 01</h2>
+
+    <p>
+        Criar uma função que retorne a média de números passados por parâmetros. Essa função pode receber quantos números forem necessários.
+    </p>
+    <p>
+        Exemplo:
+        <code>calcularMedia(2, 4); // 3</code>
+        <br>
+        <code>calcularMedia(1, 1, 2, 3, 5); // 2,4</code>
+    </p>
+
+    <h2>Problema 02</h2>
+
+    <p>
+        Crie uma função que retorne o índice de massa corporal (IMC), que é calculado da seguinte forma: IMC = peso / altura².
+    </p>
+    <p>
+        Crie uma outra função que receba este índice e retorne uma string informando sua classificação, que segue a seguinte tabela:
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Classificação</th>
+                <th>IMC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Muito Abaixo do Peso</td>
+                <td>16 a 16,9 kg/ms</td>
+            </tr>
+            <tr>
+                <td>Abaixo do Peso</td>
+                <td>17 a 18,4 kg/m2</td>
+            </tr>
+            <tr>
+                <td>Peso Normal</td>
+                <td>18,5 a 24,9 kg/m2</td>
+            </tr>
+            <tr>
+                <td>Acima do Peso</td>
+                <td>25 a 29,9 kg/m2</td>
+            </tr>
+            <tr>
+                <td>Obesidade Grau I</td>
+                <td>30 a 34,9 kg/m2</td>
+            </tr>
+            <tr>
+                <td>Obesidade Grau II</td>
+                <td>35 a 40 kg/m2</td>
+            </tr>
+            <tr>
+                <td>Obesidade Grau III</td>
+                <td>Maior que 40 kg/m2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
