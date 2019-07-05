@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema03</title>
+
+    <style>
+        body {
+            width: 650px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        p.paragrafo {
+            background-color: aqua;
+            text-align: center;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Problema03</h1>
+
+    <p>
+        Mostrar na tela (div com um #msg) uma mensagem de boas-vindas, exemplo: Bem-Vindo, Wellington! O nome do usuário deve ser digitado em um input;
+    </p>
+
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="txtNome" placeholder="digite o nome">
+
+        <button type="button">Enviar</button>
+    </form>
+
+    <div id="msg">
+
+    </div>
+
+    <script>
+        var _boasVindas = (function() {
+            var txtNome = document.querySelector('#txtNome');
+
+            var nome = txtNome.value;
+
+            if (nome != '') {
+                document.querySelector('#msg').innerHTML = '<p>Bem-vindo, <strong>' + nome + '</strong></p>';
+            }
+        })();
+
+        _boasVindas();
+    </script>
+</body>
+
+</html>

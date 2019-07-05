@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema01</title>
+
+    <style>
+        body {
+            width: 650px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        #msg {
+            background-color: aqua;
+            font-weight: bold;
+            text-align: center;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Problema01</h1>
+
+    <p>
+        Mostrar na tela (div com um #msg) uma mensagem de boas-vindas, exemplo: Bem-Vindo, Wellington! O nome do usuário pode ser uma variável cujo valor foi digitado pelo prompt();
+    </p>
+
+    <div id="msg">
+
+    </div>
+
+    <script>
+        (function(document) {
+            'use strict';
+
+            var nome = prompt('Qual é o seu nome?');
+
+            document.getElementById('msg').textContent = 'Seja Bem-Vindo ' + nome + '!';
+        })(document);
+    </script>
+</body>
+
+</html>

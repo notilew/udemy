@@ -1,4 +1,4 @@
-(function(window) {
+(function(document) {
     'use strict';
 
     function classificaIMC(imc) {
@@ -19,21 +19,15 @@
         }
     }
 
-    function calculaIMC(peso, altura, callback) {
-        var imc = peso / (altura * altura);
+    function calculaIMC(peso, altura) {
+        var imc = peso / Math.pow(altura, 2);
 
-        if (callback && typeof callback === 'function') {
-            return callback(imc);
-        }
-
-        return imc;
+        return imc.toFixed(1);
     }
 
-    var peso = 80;
-    var altura = 1.75;
-    var resultado = calculaIMC(peso, altura, classificaIMC);
+    var peso = document.getElementById('peso').value;
+    var altura = document.getElementById('altura').value;
 
-    window.document.getElementById('peso').innerHTML = peso;
-    window.document.getElementById('altura').innerHTML = altura;
-    window.document.getElementById('resultado').innerHTML = resultado;
-})(window);
+    document.getElementById('imc').value = calculaIMC(parseFloat(peso), parseFloat(altura));
+    document.getElementById('classificacao').textContent = classificaIMC(imc);
+})(document);
