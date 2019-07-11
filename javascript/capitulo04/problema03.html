@@ -39,7 +39,7 @@
         <label for="nome">Nome:</label>
         <input type="text" id="txtNome" placeholder="digite o nome">
 
-        <button type="button">Enviar</button>
+        <button type="button" onclick="enviar()">Enviar</button>
     </form>
 
     <div id="msg">
@@ -47,17 +47,15 @@
     </div>
 
     <script>
-        var _boasVindas = (function() {
-            var txtNome = document.querySelector('#txtNome');
-
+        function enviar() {
             var nome = txtNome.value;
 
             if (nome != '') {
                 document.querySelector('#msg').innerHTML = '<p>Bem-vindo, <strong>' + nome + '</strong></p>';
             }
-        })();
+        }
 
-        _boasVindas();
+        var txtNome = document.querySelector('#txtNome');
     </script>
 </body>
 

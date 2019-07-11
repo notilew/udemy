@@ -1,0 +1,16 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+td.venda-quantidade,
+td.venda-valor-unit,
+td.venda-valor-tot,
+td.venda-perc-comissao,
+td.venda-valor-receber {
+    text-align: center;
+}

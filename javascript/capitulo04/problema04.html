@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema04</title>
+
+    <style>
+        body {
+            width: 650px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        p.paragrafo {
+            background-color: aqua;
+            text-align: center;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Problema04</h1>
+
+    <p>
+        Temos duas variáveis chamadas nome e sobrenome com valores definidos. Precisamos mostrar estas variáveis concatenadas num input type="text" e deixar esse input desabilitado.
+    </p>
+
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite o seu nome aqui...">
+    </form>
+
+    <script>
+        (function() {
+            var nome = 'Wellington';
+            var sobrenome = 'Aparecido Felix';
+            var inputNome = window.document.getElementById('nome');
+
+            inputNome.value = nome + ' ' + sobrenome;
+            inputNome.disabled = true;
+        })();
+    </script>
+</body>
+
+</html>

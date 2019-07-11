@@ -20,5 +20,6 @@
 ===========================
 
 - Propriedades de conteúdo:
-    * textContent - Altera o conteúdo de um elemento. Observação: Altera somente o texto puro do elemento.
-    * innerHTML - Altera o código HTML no DOM.
+    * textContent - Recupera ou seta o conteúdo de um elemento. Observação: Altera somente o texto puro do elemento.
+    * innerHTML - Recupera ou seta o código HTML no DOM.
+    * value - Recupera ou seta o valor em um input de formulário.

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema05</title>
+
+    <style>
+        body {
+            width: 650px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        tbody tr td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Problema05</h1>
+
+    <p>
+        Crie um loop que percorra as linhas de uma tabela de alunos, encontre as quatro notas (n1, n2, n3, n4, n5) e mostre na ultima coluna dessa tabela a média correspondente de cada aluno.
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota01</th>
+                <th>Nota02</th>
+                <th>Nota03</th>
+                <th>Nota04</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="alunos-js">
+                <td class="aluno-nome">Wellington Felix</td>
+                <td class="aluno-n1-js">10</td>
+                <td class="aluno-n2-js">5.5</td>
+                <td class="aluno-n3-js">3.5</td>
+                <td class="aluno-n4-js">4.5</td>
+                <td class="aluno-media"></td>
+            </tr>
+            <tr class="alunos-js">
+                <td class="aluno-nome">Palloma Felix</td>
+                <td class="aluno-n1-js">9</td>
+                <td class="aluno-n2-js">5.5</td>
+                <td class="aluno-n3-js">7.5</td>
+                <td class="aluno-n4-js">2.5</td>
+                <td class="aluno-media"></td>
+            </tr>
+            <tr class="alunos-js">
+                <td class="aluno-nome">Maria Felix</td>
+                <td class="aluno-n1-js">7</td>
+                <td class="aluno-n2-js">8.5</td>
+                <td class="aluno-n3-js">3.5</td>
+                <td class="aluno-n4-js">1.5</td>
+                <td class="aluno-media"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        (function() {
+            'use strict';
+
+            var alunos = window.document.querySelectorAll('table tbody .alunos-js');
+            var i = 0;
+
+            while (alunos[i]) {
+                var aluno = alunos[i];
+                var notas = aluno.querySelectorAll('td');
+
+                var n1 = retornaNota(notas[1]);
+                var n2 = retornaNota(notas[2]);
+                var n3 = retornaNota(notas[3]);
+                var n4 = retornaNota(notas[4]);
+
+                var media = calculaMedia(n1, n2, n3, n4);
+
+                aluno.querySelector('.aluno-media').textContent = media;
+
+                i++;
+            }
+
+            function calculaMedia() {
+                var soma = 0;
+
+                for (var i = 0; i < arguments.length; i++) {
+                    soma += arguments[i];
+                }
+
+                return soma / arguments.length;
+            }
+
+            function retornaNota(aluno) {
+                return parseFloat(aluno.textContent);
+            }
+        })();
+    </script>
+</body>
+
+</html>
