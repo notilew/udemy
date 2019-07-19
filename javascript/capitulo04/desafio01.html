@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desafio 01</title>
+</head>
+
+<body>
+    <h1>Desafio 01</h1>
+
+    <p>Percorra todos os parágrafos de uma página e altere o conteúdo de cada um deles para "Este site foi hackeado por 'Seu Nome'".</p>
+
+    <h2>Lorem Ipsum</h2>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <p class="paragrafos">Morbi augue metus, suscipit id ornare a, luctus id metus. Vivamus eu elit ultrices, volutpat dui et, placerat eros. Cras mattis nibh magna, a pulvinar felis eleifend sed. Aliquam erat volutpat. Suspendisse faucibus augue vitae arcu mattis, at fringilla
+        turpis semper. Etiam leo diam, convallis a sodales eget, eleifend ac erat. Etiam dignissim ultrices turpis. Cras imperdiet enim vel orci sagittis, vitae hendrerit diam porttitor.</p>
+
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            var paragrafos = window.document.getElementsByClassName('paragrafos');
+
+            alteraConteudoDosElementos(paragrafos);
+
+            function alteraConteudoDosElementos(elementos) {
+                if (elementos) {
+                    for (var i = 0; i < elementos.length; i++) {
+                        elementos[i].textContent = 'Este Site foi Hackeado por Wellington Felix!!!'
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

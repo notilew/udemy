@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sintaxe Formal e Literal e Objetos de Hospedagem</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        /* Sintaxe Formal */
+        var number = new Number(0);
+
+        console.log(number);
+
+        /* -------------------------------------------------- */
+
+        var string = new String('wellington aparecido felix');
+
+        console.log(string);
+
+        /* -------------------------------------------------- */
+
+        var boolean = new Boolean(true);
+
+        console.log(boolean);
+
+        /* -------------------------------------------------- */
+
+        var date = new Date();
+
+        console.log(date);
+
+        /* -------------------------------------------------- */
+
+        var array = new Array(1, 2, 3, 4, 5);
+
+        console.log(array);
+
+        /* -------------------------------------------------- */
+
+        var objeto = new Object();
+
+        objeto.nome = 'wellington aparecido felix';
+
+        objeto.getNome = function() {
+            return this.nome;
+        }
+
+        objeto.setNome = function(nome) {
+            this.nome = nome;
+        }
+
+        console.log(objeto);
+
+        /* -------------------------------------------------- */
+
+        /* Sintaxe Literal */
+        var number = 0;
+
+        console.log(number);
+
+        /* -------------------------------------------------- */
+
+        var string = 'wellington aparecido felix';
+
+        console.log(string);
+
+        /* -------------------------------------------------- */
+
+        var boolean = true;
+
+        console.log(boolean);
+
+        /* -------------------------------------------------- */
+
+        var array = [1, 2, 3, 4, 5];
+
+        console.log(array);
+
+        /* -------------------------------------------------- */
+
+        var objeto = {
+            nome: 'wellington aparecido felix',
+            getNome: function() {
+                return this.nome;
+            },
+            setNome: function(nome) {
+                this.nome = nome;
+            }
+        }
+
+        console.log(objeto);
+    </script>
+</body>
+
+</html>
