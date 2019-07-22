@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Criando Objetos Customizados</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript Completo</h1>
+
+  <script type="text/javascript">
+    function Caneta(novaCor) {
+      var cor = novaCor || undefined // propriedade privada da classe;
+      this.preco = undefined // propriedade pública dentro da classe;
+
+      this.recuperaCor = function() {
+        return cor;
+      }
+
+      this.alteraCor = function(novaCor) { // método público da classe;
+        if (validaCor(novaCor)) {
+          cor = novaCor;
+        }
+      }
+
+      var validaCor = function(cor) { // método privado da classe;
+        if (cor != 'vermelha' && cor != 'azul' && cor != 'preto') {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    }
+
+    var caneta1 = new Caneta();
+  </script>
+</body>
+
+</html>
