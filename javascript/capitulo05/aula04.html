@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Protegendo Classe - Impedindo Criação de Objeto sem a Instrução New</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        (function(window) {
+            'use strict';
+
+            window.caneta = function Caneta() {
+                this.cor = undefined;
+                this.preco = 1;
+                this.defineCor = function(cor) {
+                    this.cor = cor;
+                }
+            }
+        })(window);
+    </script>
+</body>
+
+</html>

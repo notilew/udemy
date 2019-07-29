@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desafio01</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>Temos três objetos. Cada objeto tem duas propriedades: nome e sobrenome. Precisamos mostrar no console o nome completo de cada um deles.</p>
+
+    <script type="text/javascript">
+        var Pessoa =
+            (function() {
+                'use strict';
+
+                function Pessoa() {
+                    this.nome = undefined;
+                    this.sobrenome = undefined;
+
+                    this.obtemNome = function() {
+                        return this.nome;
+                    }
+
+                    this.obtemSobreNome = function() {
+                        return this.sobrenome;
+                    }
+                }
+
+                return Pessoa;
+            })();
+
+        var pessoa1 = new Pessoa();
+        var pessoa2 = new Pessoa();
+        var pessoa3 = new Pessoa();
+
+        pessoa1.nome = 'wellington';
+        pessoa1.sobrenome = 'aparecido felix';
+
+        pessoa2.nome = 'palloma';
+        pessoa2.sobrenome = 'miranda felix';
+
+        pessoa3.nome = 'maria';
+        pessoa3.sobrenome = 'rita felix';
+
+        for (var i = 1; i <= 3; i++) {
+            console.log(window['pessoa' + i].nome);
+        }
+    </script>
+</body>
+
+</html>
