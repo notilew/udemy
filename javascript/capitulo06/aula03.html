@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Objeto Event</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Objeto Event</h2>
+
+    <p>Objeto passado por parâmetro para a função que foi atrelada, nos fornecendo várias informações adicionais sobre o evento disparado em si. Este objeto varia de acordo com o tipo de evento.</p>
+
+    <div class="container">
+        <div id="d1" style="background-color: red; padding: 20px;">
+            Texto da div
+            <span style="background-color: yellow; padding: 5px;">Texto da span</span>
+        </div>
+    </div>
+
+    <br>
+
+    <button type="button" id="btn1">
+        Enviar
+    </button>
+
+    <script type="text/javascript">
+        document.querySelector('#d1').addEventListener('click', function() {
+            console.log('div');
+        });
+
+        document.querySelector('#d1 span').addEventListener('click', function(evento) {
+            console.log('span');
+
+            evento.stopPropagation(); // interrompe a propagação de eventos
+        });
+
+        document.addEventListener('click', function() {
+            console.log('body');
+        });
+
+        document.getElementById('btn1').addEventListener('click', function(evento) {
+            console.log(this);
+            console.log(evento.currentTarget);
+            console.log(evento.target);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <button id="btn1" onclick="alerta()">Botão 1</button>
+    <button id="btn2">Botão 2</button>
+
+    <script type="text/javascript">
+        /* DOM Level 0 */
+        var btn2 = document.getElementById('btn2');
+
+        btn2.onclick = alerta;
+
+        function alerta() {
+            alert('Enviado com Sucesso!');
+        }
+    </script>
+</body>
+
+</html>

@@ -12,41 +12,29 @@
     <p>Temos três objetos. Cada objeto tem duas propriedades: nome e sobrenome. Precisamos mostrar no console o nome completo de cada um deles.</p>
 
     <script type="text/javascript">
-        var Pessoa =
-            (function() {
-                'use strict';
+        var pessoa1 = {
+            nome: 'wellington',
+            sobrenome: 'felix'
+        };
 
-                function Pessoa() {
-                    this.nome = undefined;
-                    this.sobrenome = undefined;
+        var pessoa2 = {
+            nome: 'maria',
+            sobrenome: 'rita'
+        };
 
-                    this.obtemNome = function() {
-                        return this.nome;
-                    }
+        var pessoa3 = {
+            nome: 'josé',
+            sobrenome: 'maria'
+        };
 
-                    this.obtemSobreNome = function() {
-                        return this.sobrenome;
-                    }
-                }
+        var pessoas = [
+            pessoa1,
+            pessoa2,
+            pessoa3
+        ];
 
-                return Pessoa;
-            })();
-
-        var pessoa1 = new Pessoa();
-        var pessoa2 = new Pessoa();
-        var pessoa3 = new Pessoa();
-
-        pessoa1.nome = 'wellington';
-        pessoa1.sobrenome = 'aparecido felix';
-
-        pessoa2.nome = 'palloma';
-        pessoa2.sobrenome = 'miranda felix';
-
-        pessoa3.nome = 'maria';
-        pessoa3.sobrenome = 'rita felix';
-
-        for (var i = 1; i <= 3; i++) {
-            console.log(window['pessoa' + i].nome);
+        for (var i = 1; i <= pessoas.length; i++) {
+            console.log(window['pessoa' + i]);
         }
     </script>
 </body>

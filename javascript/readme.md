@@ -40,3 +40,8 @@
 
 - Chama uma função com um dado valor this e arguments passados individualmente.
     * .call().
+
+- Adiciona eventos em um elemento HTML.
+    * addEventListener('manipulador_de_evento', função);
+
+Observação: A propagação de eventos (capacidade dos eventos de percorrerem a estrutura do HTML, desde o elemento original até o nível mais alto (num página web é o elemento body)) possui um terceiro parâmetro, que é boleano e pode inverter direção da propagação, que seria do elemento mais alto até o elemento original. 

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 02</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Problema 02</h2>
+
+    <p>Efetuar o problema anterior, mas agora, não mais validando no click do botão, mas sim no submit do formulário.
+    </p>
+
+    <form method="get" action="cadastro.php">
+        <label for="usuario">Usuário</label>
+        <input type="text" placeholder="Nome de Usuário" name="usuario" id="usuario">
+
+        <label for="senha">Senha</label>
+        <input type="password" placeholder="Senha de Usuário" name="senha" id="senha">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            document.querySelector('form').addEventListener('submit', function(evento) {
+                evento.stopPropagation();
+
+                if (!document.getElementById('usuario').value || !document.getElementById('senha').value) {
+                    evento.preventDefault(); // previne o comportamento padrão
+
+                    alert('Usuário ou Senha não foi preenchido!');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

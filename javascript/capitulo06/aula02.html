@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <button id="btn1">Botão 1</button>
+
+    <div class="container">
+        <h1>Propagação de Eventos</h1>
+
+        <div id="d1" style="background-color: red; padding: 25px;">
+            Texto da div
+            <span style="background-color: yellow; padding: 5px;">Texto da span</span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        /* DOM Level 2 */
+        document.getElementById('btn1').addEventListener('click', function() {
+            alert('Wellington');
+        });
+
+        document.getElementById('btn1').addEventListener('click', function() {
+            alert('Aparecido');
+        });
+
+        document.getElementById('btn1').addEventListener('click', function() {
+            alert('Felix');
+        });
+
+        /* propagação de eventos */
+        document.querySelector('#d1').addEventListener('click', function() {
+            console.log('clicou no d1');
+        }); // padrão, os eventos serão propagados do elemento original para os superiores
+
+        document.querySelector('#d1 span').addEventListener('click', function() {
+            console.log('clicou no span do d1');
+        }, false); // padrão, os eventos serão propagados do elemento original para os superiores
+
+        document.addEventListener('click', function() {
+            console.log('clicou no documento');
+        }, true); // invertido, os eventos serão propagados dos elementos superiores para o original
+    </script>
+</body>
+
+</html>

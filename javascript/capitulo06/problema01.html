@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 01</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Problema 01</h2>
+
+    <p>Validar um formulário de login (usuário e senha) ao clicar no botão de envio. Se tiver algum campo vazio deve ser mostrado um alert e impedir o envio.</p>
+
+    <form>
+        <label for="usuario">Usuário</label>
+        <input type="text" placeholder="Nome de Usuário" id="usuario">
+
+        <label for="senha">Senha</label>
+        <input type="password" placeholder="Senha de Usuário" id="senha">
+
+        <p id="p-btn">
+            <button type="button">
+                Enviar
+            </button>
+        </p>
+    </form>
+
+    <script type="text/javascript">
+        document.querySelector('#p-btn').addEventListener('click', function(evento) {
+            evento.stopPropagation();
+
+            if (evento.target.localName === 'button') {
+                if (!document.getElementById('usuario').value || !document.getElementById('senha').value) {
+                    alert('Usuário ou Senha não foi preenchido!');
+                } else {
+                    alert('Dados Enviados...');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
