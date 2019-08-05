@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos de Teclado</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Eventos de Teclado</h2>
+
+    <textarea id="mensagem" cols="30" rows="10"></textarea>
+
+    <script type="text/javascript">
+      document.getElementById('mensagem').addEventListener('keydown', keydown);
+      document.getElementById('mensagem').addEventListener('keypress', keypress);
+      document.getElementById('mensagem').addEventListener('keyup', keyup);
+      document.getElementById('mensagem').addEventListener('input', input);
+
+      function keydown(e) {
+        console.log('keydown: ', this.value)
+      }
+
+      function keypress(e) {
+        console.log('keypress: ', this.value); // só é disparado por caracteres alfabéticos, númericos e enter
+      }
+
+      function keyup(e) {
+        console.log('keyup: ', this.value);
+      }
+
+      function input(e) {
+        console.log('input: ', this.value); // é disparado com qualquer entrada de dados, mesmo dados colados
+      }
+    </script>
+</body>
+
+</html>

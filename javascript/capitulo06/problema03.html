@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Problema 03</title>
+
+  <style>
+    label {
+      display: block;
+    }
+
+    span.alerta {
+      font-weight: bold;
+      color: #fff;
+      background-color: #ff0000;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Curso JavaScript Completo</h1>
+
+  <h2>Problema 03</h2>
+
+  <p>Num textarea com um número máximo de caracteres permitidos, mostrar numa span o número de caracteres restantes e
+    indicar para o usuário quando restarem apenas 10 caracteres.</p>
+
+  <form method="get" action="cadastro.php">
+    <p>
+      Restam <span id="contador"></span> caracteres!
+    </p>
+
+    <label for="fale-conosco">Fale Conosco</label>
+    <textarea name="fale-conosco" id="fale-conosco" cols="30" rows="20" maxlength="10"></textarea>
+
+    <p>
+      <button type="submit">
+        Enviar
+      </button>
+    </p>
+  </form>
+
+  <script type="text/javascript">
+    (function (document) {
+      'use strict';
+
+      var maxLength = document.getElementById('fale-conosco').maxLength
+
+      document.getElementById('contador').textContent = maxLength;
+
+      document.getElementById('fale-conosco').addEventListener('input', function(e) {
+        e.stopPropagation();
+
+        document.getElementById('contador').textContent = maxLength - this.value.length;
+      });
+    })(document);
+  </script>
+</body>
+
+</html>
