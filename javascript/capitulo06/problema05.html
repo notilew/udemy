@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 05</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Problema 05</h2>
+
+    <p>Atrelar eventos de click numa coleção de botões que ao ser clicado, mostra no console o textContent do próprio button.</p>
+
+    <form action="#" method="post" id="form">
+        <div>
+            <button type="button" id="btn-1">
+                Cadastrar
+            </button>
+        </div>
+
+        <br>
+
+        <div>
+            <button type="button" id="btn-2">
+                Deletar
+            </button>
+        </div>
+
+        <br>
+
+        <div>
+            <button type="button" id="btn-3">
+                Atualizar
+            </button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            var nodeListButton = document.querySelectorAll('div button');
+
+            for (var i = 0; i < nodeListButton.length; i++) {
+                nodeListButton[i].addEventListener('click', function(e) {
+                    e.stopPropagation();
+
+                    console.log(this.textContent);
+                });
+            }
+        })(window, document);
+    </script>
+</body>
+
+</html>

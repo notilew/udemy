@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 04</title>
+
+    <style>
+        label {
+            display: block;
+        }
+        
+        #container {
+            display: none;
+        }
+        
+        span.alerta {
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff0000;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <h2>Problema 04</h2>
+
+    <p>Permitir o envio de um formulário somente após o usuário aceitar os termos do contrato (checkbox). Para este exemplo, vamos habilitar ou desabilitar o botão dependendo do checkbox.</p>
+
+    <form action="#" method="post" id="form">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Seu Nome" maxlength="100" id="nome">
+        </div>
+
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" placeholder="Sua Senha" maxlength="30" id="senha">
+        </div>
+
+        <div>
+            <h3>Termos do Contrato</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis felis ut enim condimentum bibendum. Maecenas rhoncus iaculis justo, at vulputate libero pellentesque eu. Curabitur dapibus metus quam, vel commodo mi gravida quis. Vivamus sagittis mi ut
+                eros suscipit, non mattis velit euismod. Mauris vel egestas nibh. Maecenas blandit nisi velit, et luctus orci porttitor vel. Pellentesque molestie auctor erat, eget luctus sem vehicula sit amet. Maecenas quis elementum ligula, nec elementum
+                massa. Praesent quis sem eu turpis porttitor faucibus. Suspendisse aliquet purus enim, at tincidunt metus iaculis eget. Curabitur cursus mi ac ultrices consequat.
+            </p>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" id="termo" checked> Li e Aceito o Contrato
+            </label>
+        </div>
+
+        <div>
+            <button type="submit" id="btn">
+                Cadastrar
+            </button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            function alteraPropriedadeDisabled() {
+                button.disabled = !checkbox.checked;
+            }
+
+            var form = document.getElementById('form');
+            var nome = document.getElementById('nome');
+            var senha = document.getElementById('senha');
+            var checkbox = document.getElementById('termo');
+            var button = document.getElementById('btn');
+
+            alteraPropriedadeDisabled();
+
+            form.addEventListener('submit', function(e) {
+                e.stopPropagation();
+
+                if (!nome.value || !senha.value) {
+                    e.preventDefault();
+
+                    window.alert('É necessário informar nome e senha!');
+                } else {
+                    window.alert('Dados enviados!');
+                }
+            });
+
+            checkbox.addEventListener('change', function(e) {
+                e.stopPropagation();
+
+                alteraPropriedadeDisabled();
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>

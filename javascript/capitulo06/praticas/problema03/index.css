@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto Mono Light', sans-serif;
+    font-size: medium;
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+}
+
+label {
+    display: block;
+}
+
+p {
+    display: none;
+}
+
+span.alerta {
+    color: #ff0000;
+}

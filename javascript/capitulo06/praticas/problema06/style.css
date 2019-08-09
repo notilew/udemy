@@ -1,0 +1,14 @@
+body {
+    font-family: 'Source Code Pro Regular', sans-serif;
+    font-size: medium;
+    margin: 5% auto;
+    width: 55%;
+}
+
+div.container {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
