@@ -5,30 +5,41 @@
 
     adicionar.addEventListener('click', adicionaTarefa);
 
+    var descricao = document.getElementById('input-descricao');
+
+    descricao.addEventListener('keyup', keyup);
+
     function adicionaTarefa(evento) {
         evento.stopPropagation();
 
-        var nome = document.getElementById('input-nome');
-        var descricao = document.getElementById('input-descricao');
-        /* var ul = document.querySelector('div ul');
+        var tarefa = new window.Tarefa();
 
-        var tarefa = '';
+        tarefa.setNome(document.getElementById('input-nome'));
+        tarefa.setDescricao(document.getElementById('input-descricao'));
 
-        tarefa += '<li>';
-        tarefa += '<input type="checkbox" id="checkbox-tarefa">' + nome.value + ' | ' + descricao.value;
-        tarefa += '<button type="button" id="button-favorita">Favorita</button>';
-        tarefa += '<button type="button" id="button-realizada">Realizada</button>';
-        tarefa += '</li>';
+        if (tarefa.getNome().value && tarefa.getDescricao().value) {
+            var ul = document.querySelector('div ul');
+            var li = '';
 
-        ul.innerHTML += tarefa;
+            li += '<li>';
+            li += '<span class="nome-tarefa">' + tarefa.getNome().value + '</span>' + ' | ' + tarefa.getDescricao().value;
+            li += '</li>';
 
-        nome.value = '';
-        descricao.value = ''; */
+            ul.innerHTML += li;
 
-        if (nome.value || descricao.value) {
-            window.alert('tem nome e descrição!');
+            tarefa.getNome().focus();
+            tarefa.getNome().value = '';
+            tarefa.getDescricao().value = '';
         } else {
             window.alert('É necessário informar o nome e a descrição da tarefa!');
+        }
+    }
+
+    function keyup(evento) {
+        evento.stopPropagation();
+
+        if (evento.keyCode === 13) {
+            adicionaTarefa(evento);
         }
     }
 })(window, document);

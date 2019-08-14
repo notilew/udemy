@@ -1,0 +1,57 @@
+body {
+    font-size: medium;
+    font-family: 'Open Sans Regular', sans-serif;
+    margin: 0 auto;
+    width: 60%;
+}
+
+div.container-tarefas>h3 {
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+h1 {
+    font-size: 160%;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+h3 {
+    font-size: 120%;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+}
+
+#button-adicionar {
+    color: #fff;
+    background-color: #00ff00;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ul>li {
+    list-style: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #000;
+    padding: 15px 0;
+}
+
+span.nome-tarefa {
+    font-weight: bold;
+}

@@ -51,3 +51,9 @@ Observação: A propagação de eventos (capacidade dos eventos de percorrerem a
 ===============================
 
 - Pesquisar...
+
+====================================================
+=== VERIFICA SUPORTE DO JAVASCRIPT EM NAVEGAORES ===
+====================================================
+
+- https://caniuse.com
