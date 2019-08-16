@@ -1,9 +1,7 @@
 (function(window, document) {
-	'use strict';
+    'use strict';
 
-	var nodeList = document.querySelectorAll('div ul li');
+    var ul = document.querySelector('div ul');
 
-	for (var i = 0; i < nodeList.length; i++) {
-		adicionaEventoDeCliqueNoItemDaLista(nodeList[i]);
-	}
+    ul.addEventListener('click', adicionaEventoDeCliqueNoItemDaLista);
 })(window, document);
