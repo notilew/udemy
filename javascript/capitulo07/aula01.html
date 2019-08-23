@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Strings - Propriedades e Métodos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        // observação - Todos os métodos são não destrutivos, ou seja, a string dentro da variável continua com o valor anterior
+
+        /*
+         * Strings - Propriedades
+         * length - retorna a quantidade de caracteres de uma string
+         */
+        var str = 'wellington aparecido felix';
+
+        console.log('a quantidade de caracteres é: ', str.length);
+
+        /*--------------------------------------------------------------*/
+
+        /*
+         * Strings - Métodos
+         * replace() - Substituí caracteres da string
+         * observação - substituí somente a primeira ocorrência de caracteres ou palavras, caso não seja utiliza expressão regular
+         */
+        var str1 = 'wellington aparecido felix';
+        var str2 = 'vc é legal';
+
+        // substituí somente a primeira ocorrência, para todas as ocorrências deve-se utilizar expressões regulares
+        console.log(str1.replace('e', 'E'));
+        console.log(str2.replace('legal', 'chato'));
+
+        // substuindo todas as ocorrências
+        console.log(str1.replace(/e/g, 'E'));
+
+
+        /*
+         * Strings - Métodos
+         * indexOf() - Retorna a posição de caractere(s) da string percorrendo da esquerda para direita
+         * observação - Retorna -1 caso não encontre os caractere(s)
+         */
+        var str3 = 'wellington aparecido felix';
+
+        console.log('a posição do caractere é: ', str3.indexOf(' '));
+        console.log('a posição do caractere é: ', str3.indexOf('g'));
+        console.log('a posição da palavra é: ', str3.indexOf('ton'));
+
+        /*
+         * Strings - Métodos
+         * lastIndexOf() - Retorna a posição de caractere(s) da string percorrendo da direita para esquerda
+         * observação - Retorna -1 caso não encontre os caractere(s)
+         */
+        var str4 = 'wellington aparecido felix';
+
+        console.log('a posição do caractere é: ', str4.lastIndexOf(' '));
+
+        /*
+         * Strings - Métodos
+         * slice() - Retorna pedaços de uma string
+         * observação - Pode-se informar apenas um parâmetro ou dois
+         */
+        var str5 = 'wellington aparecido felix';
+
+        // retornando os caracteres da posição 11 em diante
+        console.log('o restante da string é: ', str5.slice(11));
+
+        // retornando os caracteres da posição 11 até 19 - última posição não é contada
+        console.log('o pedaço da string é: ', str.slice(11, 20));
+
+        /*
+         * Strings - Métodos
+         * substring() - Retorna pedaços de uma string - possui inversão automática de parâmetros
+         * observação - Pode-se informar apenas um parâmetro ou dois e pode-se informar os valores do parâmetros invertidos
+         */
+        var str6 = 'wellington aparecido felix';
+
+        // retornando os caracteres da posição 11 em diante
+        console.log('o restante da string é: ', str6.substring(11));
+
+        // retornando os caracteres da posição 11 até 19 - última posição não é contada
+        console.log('o pedaço da string é: ', str6.substring(11, 20));
+
+        // retornando os caracteres da posição 11 até 19 - última posição não é contada, passando parâmetros de forma invertida
+        console.log('o pedaço da string é: ', str6.substring(20, 11));
+        console.log('o pedaço da string é: ', str6.slice(20, 11));
+
+
+        /*
+         * Strings - Métodos
+         * split() - Quebra uma string utilizando um caractere e retorna a string quebrada como array
+         */
+        var str7 = 'wellington aparecido felix';
+
+        console.log('a string quebrada é: ', str7.split(' '));
+
+        /*
+         * Strings - Métodos
+         * toLowerCase() - Retorna a string com caixa baixa
+         */
+        var str8 = 'WELLINGTON APARECIDO FELIX';
+
+        console.log('a string em caixa baixa é: ', str8.toLowerCase());
+
+        /*
+         * Strings - Métodos
+         * toUpperCase() - Retorna a string com caixa alta
+         */
+        var str9 = 'wellington aparecido felix';
+
+        console.log('a string em caixa alta é: ', str8.toUpperCase());
+
+        /*
+         * Strings - Métodos
+         * valueOf() - Retorna o valor primitivo de um objeto
+         */
+        var str10 = 'wellington aparecido felix';
+
+        console.log('o valor primitivo do objeto é: ', str10.valueOf());
+    </script>
+</body>
+
+</html>

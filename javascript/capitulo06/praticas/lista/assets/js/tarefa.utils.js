@@ -47,24 +47,28 @@ function adicionaTarefaComTeclaEnter(evento) {
  * descriçao - adiciona a classe remove-tarefa no item da lista
  */
 function removeTarefaComClique(li) {
-    li.classList.toggle('remove-tarefa');
+    // li.classList.toggle('remove-tarefa');
+
+    var confirmacao = window.confirm('Deseja remover a tarefa: ' + li.textContent + ' ?');
+
+    if (confirmacao) {
+        var parentNode = li.parentNode;
+
+        if (parentNode) {
+            parentNode.removeChild(li);
+        }
+    }
 }
 
 /*
  * evento - click
  * elemento - <li></li>
- * descrição - adiciona um ouvinte de evento na li passada como parâmetro
+ * descrição - verifica se um item da lista foi clicado e chama o método removeTarefaComClique
  */
-function adicionaEventoDeCliqueNoItemDaLista(evento) {
+function verificaItemDaListaClicado(evento) {
     evento.stopPropagation();
 
     if (evento.target.localName === 'li') {
-        var confirmacao = window.confirm('Deseja remover a tarefa: ' + evento.target.textContent + ' ?');
-
-        if (confirmacao) {
-            window.alert('excluiu');
-        }
-
         removeTarefaComClique(evento.target);
     }
 }

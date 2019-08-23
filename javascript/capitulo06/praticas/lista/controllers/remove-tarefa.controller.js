@@ -3,5 +3,5 @@
 
     var ul = document.querySelector('div ul');
 
-    ul.addEventListener('click', adicionaEventoDeCliqueNoItemDaLista);
+    ul.addEventListener('click', verificaItemDaListaClicado);
 })(window, document);
