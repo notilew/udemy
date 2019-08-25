@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Problema 01</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript Completo</h1>
+
+  <p>
+    Selecionar todos os parágrafos de uma página e, se o texto tiver mais do que duzentos caracteres, mostrar somente os duzentos primeiros seguidos de reticencias.
+  </p>
+
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur lectus ipsum, a vehicula elit viverra et. Nulla faucibus fermentum efficitur. Curabitur ultricies nibh sed est congue, fermentum varius turpis tempor. Proin lacinia id est
+      non pharetra. Sed a accumsan quam. Praesent eu convallis neque. Fusce id laoreet leo, et aliquet risus. Nullam interdum ante enim, rhoncus sollicitudin augue commodo vel. Nulla at lacinia nisi, ac ornare sapien. Vivamus sed mi sit amet arcu lobortis
+      placerat vitae at elit. Nulla vulputate egestas nunc sit amet porta. Donec mattis a odio vitae molestie. Nullam enim velit, tincidunt pretium sem tempor, dictum ullamcorper elit.
+    </p>
+    <p>
+      Donec hendrerit rhoncus lorem nec congue. Aliquam maximus consectetur sapien, sed aliquam ipsum rutrum non. Ut libero arcu, accumsan ut odio in, interdum porta leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sodales ac magna vel
+      finibus. Curabitur blandit fermentum volutpat. Vivamus lacinia suscipit sapien, vel pellentesque augue eleifend consequat. Vestibulum vel mauris id dui rhoncus fermentum. In urna lectus, dignissim ornare maximus vitae, vehicula non nisi. Donec laoreet
+      blandit leo ut sodales. Etiam vitae luctus magna. Nunc vulputate lectus id ante aliquam aliquet. Ut et placerat turpis. Cras aliquam molestie imperdiet. Suspendisse eget ex id neque semper bibendum. Donec sollicitudin magna vitae ullamcorper dapibus.
+      In sollicitudin fringilla ante, ac tempor metus varius non. Nullam scelerisque lobortis lorem. Donec mattis dignissim consectetur. Nulla egestas congue imperdiet.
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    (function(window, document) {
+      'use strict';
+
+      window.addEventListener('load', function() {
+        var paragrafos = document.querySelectorAll('div > p');
+
+        for (var i = 0; i < paragrafos.length; i++) {
+          paragrafos[i].innerText = formataParagrafo(paragrafos[i].innerText);
+        }
+
+        function formataParagrafo(texto) {
+          if (texto.length <= 200) {
+            return texto;
+          }
+
+          return texto.substring(0, 201) + '...';
+        }
+      });
+    })(window, document);
+  </script>
+</body>
+
+</html>

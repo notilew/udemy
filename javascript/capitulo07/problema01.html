@@ -2,50 +2,68 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title>Problema 01</title>
+  <meta charset="utf-8">
+  <title>Problema 01</title>
 </head>
 
 <body>
-    <h1>Curso JavaScript Completo</h1>
+  <h1>Curso JavaScript Completo</h1>
+
+  <p>
+    Criar uma função que recebe um nome completo e retorna este nome formatado, seguindo o exemplo: 'Daniel Tapias Morales', será transformado em: 'Morales, Daniel Tapias'.
+  </p>
+
+  <div>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" maxlength="50" placeholder="Seu nome completo">
+
+    <button type="button">Transformar</button>
 
     <p>
-        Criar uma função que recebe um nome completo e retorna este nome formatado, seguindo o exemplo: 'Daniel Tapias Morales', será transformado em: 'Morales, Daniel Tapias'.
+      Quantidade de Caracteres Restantes: <span></span>
     </p>
 
-    <div>
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" maxlength="50" placeholder="Seu nome completo">
+    <h2></h2>
+  </div>
 
-        <button type="button">Transformar</button>
-    </div>
+  <script type="text/javascript">
+    (function(document) {
+      'use strict';
 
-    <script type="text/javascript">
-        (function(document) {
-            'use strict';
+      var inputNome = document.querySelector('#nome');
+      var buttonTransformar = document.querySelector('button');
+      var h2 = document.querySelector('h2');
+      var span = document.querySelector('p span');
 
-            var transformar = document.querySelector('button');
+      const maxLength = inputNome.getAttribute('maxlength');
 
-            transformar.addEventListener('click', transformaNome);
+      span.textContent = maxLength;
 
-            function transformaNome(evento) {
-                evento.stopPropagation();
+      inputNome.addEventListener('input', mostraContagem);
+      buttonTransformar.addEventListener('click', transformaNome);
 
-                var nome = document.querySelector('#nome');
+      function transformaNome(evento) {
+        evento.stopPropagation();
 
-                if (nome.value.length > 0 && isNaN(nome.value)) {
-                    var array = nome.value.split(' ');
-                    var nomeTransformado = '';
+        if (inputNome.value.length > 0 && isNaN(inputNome.value)) {
+          var posicao = inputNome.value.lastIndexOf(' ');
 
-                    for (var i = array.length - 1; i >= 0; i--) {
-                        nomeTransformado += array[i] + ' ';
-                    }
+          if (posicao > 0) {
+            var nome = inputNome.value.substring(0, posicao);
+            var sobrenome = inputNome.value.substring(posicao) + ',';
 
-                    console.log(nomeTransformado);
-                }
-            }
-        })(document);
-    </script>
+            h2.textContent = sobrenome + ' ' + nome;
+          }
+        }
+      }
+
+      function mostraContagem(evento) {
+        evento.stopPropagation();
+
+        span.textContent = maxLength - evento.target.value.length;
+      }
+    })(document);
+  </script>
 </body>
 
 </html>
