@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 01</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Tratar a saída da função que calcula a média e retornar um número com apenas duas casas decimais.
+    </p>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                var notas = [5, 3, 8, 10];
+
+                console.log('a média é: ', calculaMediaDasNotas.apply(this, notas));
+
+                function calculaMediaDasNotas() {
+                    var somatorio = 0;
+                    var media = 0;
+
+                    if (arguments.length > 1) {
+                        for (var i = 0; i < arguments.length; i++) {
+                            somatorio += arguments[i];
+                        }
+
+                        media = somatorio / arguments.length;
+
+                        return media.toFixed(2);
+                    } else {
+                        alert('É necessário o lançamento de pelo menos 2 notas para calcular a média!');
+                    }
+                }
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>

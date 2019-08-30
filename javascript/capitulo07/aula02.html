@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Numbers - Propriedades e Métodos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        // observação - Todos os métodos são não destrutivos, ou seja, o valor dentro da variável continua com o valor anterior
+
+        /*
+         * Numbers - Propriedades
+         * MAX_VALUE - Representa o maior valor que o javascript pode manipular
+         * Observação - É uma propriedade (constante) estática
+         */
+        console.log('a propriedade estática de valor máximo é: ', Number.MAX_VALUE);
+
+        /*
+         * Numbers - Propriedades
+         * MIN_VALUE - Representa o menor valor que o javascript pode manipular
+         * Observação - É uma propriedade (constante) estática
+         */
+        console.log('a propriedade estática de valor mínimo é: ', Number.MIN_VALUE);
+
+        /*
+         * Numbers - Métodos
+         * toFixed() - Formata um número utilizando a notação de ponto fixo. Trata as casas decimais de um valor, retornando o número de casas passadas por parâmetro
+         * observação - Retorna a quantidade de casas decimais informadas como parâmetro, caso o valor não tenha a quantidade informada, o método completa com zeros
+         */
+        var num1 = 123.456;
+
+        console.log('o valor com 2 casas decimais é: ', num1.toFixed(2));
+        console.log('o valor com 10 casas decimais é: ', num1.toFixed(10));
+
+
+        /*
+         * Numbers - Métodos
+         * toPrecision() - Retorna uma string representando o número para a precisão especificada
+         * observação - Retorna zeros caso o valor seja menor que a quantidade informada
+         */
+        var num2 = 1;
+
+        console.log('a precisão do valor com 2 números é: ', num2.toPrecision(2));
+        console.log('a precisão do valor com 5 números é: ', num2.toPrecision(5));
+
+        /*
+         * Numbers - Métodos
+         * toString() - Retorna uma string representando o valor do número em outra base númerica (binária, decimal, hexadecimal)
+         * observação - Retorna uma string representando o próprio valor caso não seja passado uma base númerica como parâmetro
+         */
+        var num3 = 10;
+
+        console.log('o próprio valor do número em string é: ', num3.toString());
+        console.log('o valor do número na base binária é: ', num3.toString(2));
+        console.log('o valor do número na base decimal é: ', num3.toString(10));
+        console.log('o valor do número na base hexadecimal é: ', num3.toString(16));
+
+        /*
+         * Numbers - Métodos
+         * toExponencial() - Retorna uma string com o valor do número como uma notação ciêntifíca
+         * observação - Retorna uma string com o valor do número como uma notação ciêntifíca com a quantidade de dígitos informados como parâmetro
+         */
+        var num4 = 123456.789;
+
+        console.log('a notação ciêntífica do valor é: ', num4.toExponential());
+        console.log('a notação ciêntífica do valor com duas casas decimais é: ', num4.toExponential(3));
+    </script>
+</body>
+
+</html>
