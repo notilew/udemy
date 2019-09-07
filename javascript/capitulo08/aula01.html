@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arrays - Propriedades e Métodos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        var arr01 = new Array(1, 2, 3, 4, 5); // criando array com sintaxe formal
+        var arr02 = [1, 2, 3, 4, 5]; // criando array com sintaxe literal
+
+        /*
+         * Arrays - Propriedades
+         * length - retorna a quantidade de índices de um array
+         */
+        var arr = [100, 200, 'teste']
+
+        console.log('a quantidade de índices do array é: ', arr.length);
+
+        /*
+         * Arrays - Métodos
+         * every() - Retorna um booleano se todos os valores do array passarem em uma condição em uma função de callback
+         * observao - Retorna true se todos os valores retornarem true
+         */
+        var boolean01 = arr.every(function(valor, indice, objeto) {
+            return typeof valor === 'number';
+        });
+
+        console.log('retorno do método every: ', boolean01);
+
+        /*
+         * Arrays - Métodos
+         * some() - Retorna um booleano se todos os valores do array passarem em uma condição de uma função de callback
+         * observação - Retorna true se pelo menos um valore retornar true
+         */
+        var boolean02 = arr.some(function(valor, indice, objeto) {
+            return typeof valor === 'number';
+        });
+
+        console.log('retorno do método some: ', boolean02);
+
+        /*
+         * Arrays - Métodos
+         * filter() - Retorna um array somente com os valores que passarem em uma condição de uma função de callback
+         */
+        var filtro = arr.filter(function(valor, indice, objeto) {
+            return typeof valor === 'number';
+        });
+
+        console.log('retorno do método filter: ', filtro);
+
+        /*
+         * Arrays - Métodos
+         * forEach() - Itera sobre cada índice do array executando uma função de callback
+         */
+        arr.forEach(function(valor, indice, objeto) {
+            console.log('retorno do método forEach() - valor = ', valor, 'índice = ', indice);
+        });
+
+        /*
+         * Arrays - Métodos
+         * indexOf() - Retorna o índice do valor de um elemento do array
+         */
+        console.log('retorno do método indexOf - ', arr.indexOf(200));
+
+        /*
+         * Arrays - Métodos
+         * lastIndexOf() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * map() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * concat() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * join() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * pop() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * push() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * reduce() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * reduceRight - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * reverse() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * shift() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * unshift() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * slice() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * splice() - 
+         */
+
+        /*
+         * Arrays - Métodos
+         * toString() - 
+         */
+    </script>
+</body>
+
+</html>

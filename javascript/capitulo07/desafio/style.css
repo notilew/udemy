@@ -1,0 +1,13 @@
+@media screen and (min-device-width: 800px) and (orientation: landscape) {
+    body {
+        font-size: medium;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+h1 {
+    font-size: 160%;
+}
