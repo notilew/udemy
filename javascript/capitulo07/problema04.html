@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 04</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Criar uma função chamada sortear que deve receber por parâmetro o número de valores possivéis de serem retornados pela função. Exemplo: sortear(2) deve retornar 0 ou 1; sortear(10) deve retornar números de 0 a 9.
+    </p>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                window.Sortear = function() {
+                    this.numero = undefined;
+                    this.parametro = undefined;
+
+                    this.geraNumeroAleatorio = function() {
+                        if (arguments.length === 1) {
+                            this.parametro = arguments[0] || 1;
+
+                            this.numero = Math.floor(Math.random() * this.parametro);
+
+                            return this.numero;
+                        } else {
+                            alert('Não é permitido passar mais que um parâmetro');
+                        }
+                    }
+                }
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>

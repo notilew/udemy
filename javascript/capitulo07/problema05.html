@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 05</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Desenvolver uma página que mude a imagem de fundo sempre que a página é recarregada (randômico). Será que é uma boa ideia utilizarmos a função recém-criada?
+    </p>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                var path = 'img/' + Math.floor(Math.random() * 6) + '.jpg';
+
+                document.querySelector('body').style.backgroundImage.backgroundImage = path;
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>
