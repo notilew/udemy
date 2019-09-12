@@ -79,33 +79,76 @@
 
         /*
          * Arrays - Métodos
-         * map() -
+         * map() - Retorna um array modificando cada elemento do array
          */
+        filtro = filtro.map(function(valor, indice, objeto) {
+            return valor * indice;
+        });
+
+        console.log('retorno do método map - ', filtro);
 
         /*
          * Arrays - Métodos
-         * concat() -
+         * concat() - Retorna um array concatenado com outro array
+         * observação - Permite passar outros valores como parâmetro que também serão concatenados
          */
+        console.log('retorno do método concat - ', arr.concat(filtro));
+        console.log('retorno do método concat - ', arr.concat(filtro, 10, 20, 'felix'));
 
         /*
          * Arrays - Métodos
-         * join() -
+         * join() - Retorna uma string única com todos os valores do array
+         * observação - Pode-se passar como parâmetro um caractere que será um separador entre os elementos da string
          */
+        console.log('retorno do método join - ', arr.join());
+        console.log('retorno do método join com separador - ', arr.join('-'));
 
         /*
          * Arrays - Métodos
-         * pop() -
+         * push() - Retorna o valor de length após adicionar um novo elemento no final do array
+         * observação - Método destrutivo pois, adiciona o novo elemento no final do array modificando o seu tamanho
          */
+        console.log('retorno do método push length - ', arr.push(50));
+        console.log('retorno do método push length - ', arr.push(60, 70));
+        console.log('retorno do método push - ', arr);
 
         /*
          * Arrays - Métodos
-         * push() -
+         * unshift() - Retorna o valor de length após adicionar um novo elemento no início do array
+         * observação - Método destrutivo pois, adiciona o novo elemento no início do array modificando o seu tamanho
          */
+        console.log('retorno do método unshift length - ', arr.unshift(50));
+        console.log('retorno do método unshift length - ', arr.unshift(60, 70));
+        console.log('retorno do método unshift - ', arr);
 
         /*
          * Arrays - Métodos
-         * reduce() -
+         * pop() - Retorna o último elemento do array após removê-lo
+         * obervação - Método destrutivo pois, remove o último elemento modificando o tamanho do array
          */
+        console.log('retorno do método pop último elemento - ', arr.pop());
+        console.log('retorno do método pop - ', arr);
+
+        /*
+         * Arrays - Métodos
+         * shift() - Retorna o primeiro elemento do array após removê-lo
+         * observação - Método destrutivo pois, remove o primeiro elemento modificando o tamanho do array
+         */
+        console.log('retorno do método shift primeiro elemento - ', arr.shift());
+        console.log('retorno do método shift', arr);
+
+        /*
+         * Arrays - Métodos
+         * reduce() - Retorna uma único valor de saída após executar uma função redutora que será executada em cada elemento do array
+         * observação - Pode-se passar um parêmtro extra ao final da chamada do método que será o valor inicial do somatório antes de percorrer os elementos
+         */
+        console.log('valores do array filtro antes do método reduce - ', filtro);
+        console.log('retorno do método reduce sem parâmetro extra - ', filtro.reduce(function(somatorio, valorAtual, indice, objeto) {
+            return somatorio + valorAtual;
+        }));
+        console.log('retorno do método reduce com parâmetro extra - ', filtro.reduce(function(somatorio, valorAtual, indice, objeto) {
+            return somatorio + valorAtual;
+        }, 100));
 
         /*
          * Arrays - Métodos
@@ -119,22 +162,7 @@
 
         /*
          * Arrays - Métodos
-         * shift() -
-         */
-
-        /*
-         * Arrays - Métodos
-         * unshift() -
-         */
-
-        /*
-         * Arrays - Métodos
          * slice() -
-         */
-
-        /*
-         * Arrays - Métodos
-         * splice() -
          */
 
         /*
