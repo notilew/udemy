@@ -139,7 +139,7 @@
 
         /*
          * Arrays - Métodos
-         * reduce() - Retorna uma único valor de saída após executar uma função redutora que será executada em cada elemento do array
+         * reduce() - Retorna uma único valor de saída após executar uma função redutora que será executada em cada elemento do array da esquerda para direita
          * observação - Pode-se passar um parêmtro extra ao final da chamada do método que será o valor inicial do somatório antes de percorrer os elementos
          */
         console.log('valores do array filtro antes do método reduce - ', filtro);
@@ -152,18 +152,36 @@
 
         /*
          * Arrays - Métodos
-         * reduceRight -
+         * reduceRight - Retorna uma único valor de saída após executar uma função redutora que será executada em cada elemento do array da direita para esquerda
+         * observação - Pode-se passar um parêmtro extra ao final da chamada do método que será o valor inicial do somatório antes de percorrer os elementos
          */
+        var filtroString = filtro.map(function(valor) {
+            return valor.toString();
+        });
+
+        console.log('valores do array filtro antes do método reduceRight - ', filtroString);
+        console.log('retorno do método reduceRight sem parâmetro extra - ', filtroString.reduceRight(function(somatorio, valorAtual, indice, objeto) {
+            return somatorio + valorAtual;
+        }));
+        console.log('retorno do método reduceRight com parâmetro extra - ', filtroString.reduceRight(function(somatorio, valorAtual, indice, objeto) {
+            return somatorio + valorAtual;
+        }, 100));
+
 
         /*
          * Arrays - Métodos
-         * reverse() -
+         * reverse() - Retorna um array com os elementos invertidos
+         * observação - Método destrutivo pois, inverte a posição dos elementos do array
          */
+        console.log('valores do array arr antes do método reverse - ', arr);
+        console.log('retorno do método reverse - ', arr.reverse());
 
         /*
          * Arrays - Métodos
-         * slice() -
+         * slice() - Retorna um pedaço de um array
          */
+        console.log('valores do array filtro antes do método slice - ', filtro);
+        console.log('retorno do método slice - ', filtro.slice(2, 5));
 
         /*
          * Arrays - Métodos
