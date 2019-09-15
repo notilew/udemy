@@ -26,7 +26,7 @@
          * every() - Retorna um booleano se todos os valores do array passarem em uma condição em uma função de callback
          * observao - Retorna true se todos os valores retornarem true
          */
-        var boolean01 = arr.every(function(valor, indice, objeto) {
+        var boolean01 = arr.every(function (valor, indice, objeto) {
             return typeof valor === 'number';
         });
 
@@ -37,7 +37,7 @@
          * some() - Retorna um booleano se todos os valores do array passarem em uma condição de uma função de callback
          * observação - Retorna true se pelo menos um valore retornar true
          */
-        var boolean02 = arr.some(function(valor, indice, objeto) {
+        var boolean02 = arr.some(function (valor, indice, objeto) {
             return typeof valor === 'number';
         });
 
@@ -47,7 +47,7 @@
          * Arrays - Métodos
          * filter() - Retorna um array somente com os valores que passarem em uma condição de uma função de callback
          */
-        var filtro = arr.filter(function(valor, indice, objeto) {
+        var filtro = arr.filter(function (valor, indice, objeto) {
             return typeof valor === 'number';
         });
 
@@ -57,7 +57,7 @@
          * Arrays - Métodos
          * forEach() - Itera sobre cada índice do array executando uma função de callback
          */
-        arr.forEach(function(valor, indice, objeto) {
+        arr.forEach(function (valor, indice, objeto) {
             console.log('retorno do método forEach() - valor = ', valor, 'índice = ', indice);
         });
 
@@ -81,7 +81,7 @@
          * Arrays - Métodos
          * map() - Retorna um array modificando cada elemento do array
          */
-        filtro = filtro.map(function(valor, indice, objeto) {
+        filtro = filtro.map(function (valor, indice, objeto) {
             return valor * indice;
         });
 
@@ -143,10 +143,10 @@
          * observação - Pode-se passar um parêmtro extra ao final da chamada do método que será o valor inicial do somatório antes de percorrer os elementos
          */
         console.log('valores do array filtro antes do método reduce - ', filtro);
-        console.log('retorno do método reduce sem parâmetro extra - ', filtro.reduce(function(somatorio, valorAtual, indice, objeto) {
+        console.log('retorno do método reduce sem parâmetro extra - ', filtro.reduce(function (somatorio, valorAtual, indice, objeto) {
             return somatorio + valorAtual;
         }));
-        console.log('retorno do método reduce com parâmetro extra - ', filtro.reduce(function(somatorio, valorAtual, indice, objeto) {
+        console.log('retorno do método reduce com parâmetro extra - ', filtro.reduce(function (somatorio, valorAtual, indice, objeto) {
             return somatorio + valorAtual;
         }, 100));
 
@@ -155,15 +155,15 @@
          * reduceRight - Retorna uma único valor de saída após executar uma função redutora que será executada em cada elemento do array da direita para esquerda
          * observação - Pode-se passar um parêmtro extra ao final da chamada do método que será o valor inicial do somatório antes de percorrer os elementos
          */
-        var filtroString = filtro.map(function(valor) {
+        var filtroString = filtro.map(function (valor) {
             return valor.toString();
         });
 
         console.log('valores do array filtro antes do método reduceRight - ', filtroString);
-        console.log('retorno do método reduceRight sem parâmetro extra - ', filtroString.reduceRight(function(somatorio, valorAtual, indice, objeto) {
+        console.log('retorno do método reduceRight sem parâmetro extra - ', filtroString.reduceRight(function (somatorio, valorAtual, indice, objeto) {
             return somatorio + valorAtual;
         }));
-        console.log('retorno do método reduceRight com parâmetro extra - ', filtroString.reduceRight(function(somatorio, valorAtual, indice, objeto) {
+        console.log('retorno do método reduceRight com parâmetro extra - ', filtroString.reduceRight(function (somatorio, valorAtual, indice, objeto) {
             return somatorio + valorAtual;
         }, 100));
 
@@ -181,12 +181,36 @@
          * slice() - Retorna um pedaço de um array
          */
         console.log('valores do array filtro antes do método slice - ', filtro);
-        console.log('retorno do método slice - ', filtro.slice(2, 5));
+
+        // retornando os elementos da posição 1 até 2 - última posição não é contada
+        console.log('retorno do método slice - ', filtro.slice(1, 3));
 
         /*
          * Arrays - Métodos
-         * toString() -
+         * splice() - Retorna um array com os elementos removidos além de alterar o conteúdo do array, adicionando novos elementos enquanto remove elementos antigos
+         * observação - Método destrutivo pois, adiciona ou remove elementos alterando o array
+         * observação - Parâmetro 01 - Número da posição onde deve começar a modificação
+         * observação - Parâmetro 02 - Número de posições que serão removidas
+         * observação - Parâmetro 03 - Valores que serão adicionados
          */
+        var arr04 = new Array('pera', 'uva', 'maça');
+
+        console.log('valores do array arr04 antes do método splice - ', arr04);
+
+        // no índice 1, remove dois elementos e adiciona 2
+        console.log('retorno do método splice - ', arr04.splice(1, 2, 'kiwi', 'mamão'));
+
+        console.log('valores do array arr04 - ', arr04);
+
+        // no índice 1, não remove nenhum elemento elemento e adciona 1
+        console.log('retorno do método splice - ', arr04.splice(1, 0, 'laranja'));
+
+        console.log('valores do array arr04 - ', arr04);
+        /*
+         * Arrays - Métodos
+         * toString() - Retorna uma string única com todos os valores do array
+         */
+        console.log('retorno do método toString - ', arr.toString());
     </script>
 </body>
 

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Problema 01</title>
+</head>
+
+<body>
+  <h1>Curso JavaScript Completo</h1>
+
+  <p>
+    Mostrar se um aluno foi aprovado ou não utilizando uma função calcularMedia(). Contudo, se houver pelo menos uma
+    nota zero, reprovar o aluno automaticamente.
+  </p>
+
+  <script type="text/javascript">
+    (function (document) {
+      'use strict';
+
+      function calculaMedia(notas) {
+        var notaZerada = notas.every(function (valor) {
+          return valor > 0;
+        });
+
+        if (notaZerada) {
+          var somatorio = notas.reduce(function (somatorio, valorAtual) {
+            return somatorio + valorAtual;
+          });
+
+          return somatorio / notas.length;
+        } else {
+          alert('Aluno Reprovado!');
+        }
+      }
+
+      var notas = new Array(10, 5, 8, 7, 1);
+
+      var media = calculaMedia(notas);
+
+      console.log('A média é: ', media);
+    })(document);
+  </script>
+</body>
+
+</html>
