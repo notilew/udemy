@@ -1,24 +1,47 @@
-(function(window, document) {
+(function (window, document) {
     'use strict';
 
-    window.addEventListener('load', function() {
-        document.querySelector('#id').value = Math.floor(Math.random() * 1000) + 1;
-    });
-
-    document.querySelector('button').addEventListener('click', function(e) {
+    document.querySelector('button').addEventListener('click', function (e) {
         e.stopPropagation();
 
         var formulario = document.querySelector('#main form');
+        var aluno = new window.Aluno();
 
-        if (formulario) {
-            var aluno = new window.Aluno();
+        aluno.novoCadastro();
+        aluno.setNome(formulario.querySelector('#nome').value);
+        aluno.setCPF(formulario.querySelector('#cpf').value);
+        aluno.setEmail(formulario.querySelector('#email').value);
+        aluno.setNotas(formulario.querySelectorAll)
 
-            aluno.setId(formulario.querySelector('#id').value);
-            aluno.setNome(formulario.querySelector('#nome').value);
-            aluno.setCPF(formulario.querySelector('#cpf').value);
-            aluno.setEmail(formulario.querySelector('#email').value);
+        formulario.querySelector('#nome').value = '';
+        formulario.querySelector('#cpf').value = '';
+        formulario.querySelector('#email').value = '';
 
-            var validado = aluno.validaFormularioAluno()
+        if (aluno.getNome() && aluno.getCPF && aluno.getEmail()) {
+            window.alert('Aluno cadastrado com sucesso!');
+
+            var tbody = document.querySelector('table tbody');
+            var tr = document.createElement('tr');
+
+            for (var i = 0; i <= 2; i++) {
+                var td = document.createElement('td');
+
+                switch (i) {
+                    case 0:
+                        td.textContent = aluno.getNome();
+                        break;
+                    case 1:
+                        td.textContent = aluno.getCPF();
+                        break;
+                    case 2:
+                        td.textContent = aluno.getEmail();
+                        break;
+                }
+
+                tr.appendChild(td);
+            }
+
+            tbody.appendChild(tr);
         }
     });
 })(window, document);

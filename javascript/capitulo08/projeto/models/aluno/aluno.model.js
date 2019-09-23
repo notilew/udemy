@@ -1,50 +1,95 @@
-(function(window) {
+(function (window) {
     'use strict';
 
-    window.Aluno = function() {
+    window.Aluno = function () {
         var id = undefined;
         var nome = undefined;
         var cpf = undefined;
         var email = undefined;
+        var notas = undefined;
 
-        this.getId = function() {
+        this.getId = function () {
             return id;
         }
 
-        this.setId = function(novoId) {
-            id = (novoId) ? novoId : 'ID não foi gerado!';
+        this.setId = function (novoId) {
+            if (novoId) {
+                id = novoId;
+            } else {
+                window.alert('O id do aluno não foi enviado!');
+            }
         }
 
-        this.getNome = function() {
+        this.geraId = function () {
+            return Math.floor(Math.random() * 1000) + 1;
+        }
+
+        this.getNome = function () {
             return nome;
         }
 
-        this.setNome = function(novoNome) {
-            nome = (novoNome) ? novoNome.toLowerCase() : window.alert('O nome do aluno não foi enviado!');
+        this.setNome = function (novoNome) {
+            if (novoNome) {
+                if (isNaN(novoNome)) {
+                    nome = novoNome.toLowerCase();
+                } else {
+                    window.alert('O nome do aluno não pode conter números!');
+                }
+            } else {
+                window.alert('O nome do aluno não foi enviado!');
+            }
         }
 
-        this.getCPF = function() {
+        this.getCPF = function () {
             return cpf;
         }
 
-        this.setCPF = function(novoCPF) {
-            cpf = (novoCPF) ? novoCPF.toString() : window.alert('O CFP do aluno não foi enviado!');
+        this.setCPF = function (novoCPF) {
+            if (novoCPF) {
+                if (!isNaN(novoCPF)) {
+                    if (novoCPF.length === 11) {
+                        cpf = novoCPF;
+                    } else {
+                        window.alert('O CPF do aluno deve conter 11 dígitos!');
+                    }
+                } else {
+                    window.alert('O CPF do aluno deve conter apenas números!');
+                }
+            } else {
+                window.alert('O CFP do aluno não foi enviado!');
+            }
         }
 
-        this.getEmail = function() {
+        this.getEmail = function () {
             return email;
         }
 
-        this.setEmail = function(novoEmail) {
-            email = (novoEmail) ? novoEmail.toLowerCase() : window.alert('O e-mail do aluno não foi enviado!');
+        this.setEmail = function (novoEmail) {
+            if (novoEmail) {
+                email = novoEmail.toLowerCase();
+            } else {
+                window.alert('O e-mail do aluno não foi enviado!');
+            }
         }
 
-        this.validaFormularioAluno = function() {
-            var validado = true;
+        this.getNotas = function () {
+            return notas;
+        }
 
-            if (!nome) {
-
+        this.setNotas = function (novaNota) {
+            if (novaNota) {
+                notas.push(novaNota);
+            } else {
+                window.alert('A nota do aluno não foi enviada!');
             }
+        }
+
+        this.novoCadastro = function () {
+            id = this.geraId();
+            nome = '';
+            cpf = '';
+            email = '';
+            notas = new Array();
         }
     }
 })(window);

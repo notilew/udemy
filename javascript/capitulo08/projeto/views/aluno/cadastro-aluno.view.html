@@ -16,21 +16,32 @@
             <fieldset>
                 <legend>Cadastro de Aluno</legend>
                 <div>
-                    <label for="id">Identificador</label>
-                    <input type="number" id="id" readonly>
-                </div>
-
-                <div>
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" placeholder="Nome do Aluno" maxlength="150">
                 </div>
 
                 <div>
                     <label for="cpf">CPF</label>
-                    <input type="number" id="cpf" placeholder="CFP do Aluno" maxlength="11">
+                    <input type="number" id="cpf" placeholder="CPF do Aluno" maxlength="11">
+                </div>
 
+                <div>
                     <label for="email">E-mail</label>
                     <input type="email" id="email" placeholder="E-mail do Aluno" maxlength="50">
+                </div>
+
+                <div>
+                    <label for="nota01">Nota01</label>
+                    <input type="number" id="nota01" placeholder="Nota01">
+
+                    <label for="nota02">Nota02</label>
+                    <input type="number" id="nota02" placeholder="Nota02">
+
+                    <label for="nota03">Nota03</label>
+                    <input type="number" id="nota03" placeholder="Nota03">
+
+                    <label for="nota04">Nota04</label>
+                    <input type="number" id="nota04" placeholder="Nota04">
                 </div>
 
                 <div>
@@ -40,12 +51,38 @@
                 </div>
             </fieldset>
         </form>
+
+
+
+        <p>
+            <a href="../index.html" title="voltar ao dashboard">
+                Voltar
+            </a>
+        </p>
     </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>E-mail</th>
+                <th>Nota01</th>
+                <th>Nota02</th>
+                <th>Nota03</th>
+                <th>Nota04</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
     <div id="footer">
         <p>&copy; Todos os direitos reservados 2019</p>
     </div>
 
+    <script type="text/javascript" src="../../assets/js/utilidades.js"></script>
     <script type="text/javascript" src="../../models/aluno/aluno.model.js"></script>
     <script type="text/javascript" src="../../controllers/aluno/cadastro-aluno.controller.js"></script>
 </body>
