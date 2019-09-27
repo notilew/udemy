@@ -57,3 +57,14 @@ Observação: A propagação de eventos (capacidade dos eventos de percorrerem a
 ====================================================
 
 - https://caniuse.com
+
+======================
+=== SPRED OPERATOR ===
+======================
+
+- É utilizado para passar para o array arguments, argumentos separados, parâmetros que estejam em array [2, 3, 4] ou string '2, 3, 4'.
+
+    * calculaMedia(...[2, 3]);
+
+    * calculaMedia(...'2, 3');
+
