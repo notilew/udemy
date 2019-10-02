@@ -1,0 +1,117 @@
+<!doctype html>
+<div lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Desafio 02</title>
+        <style>
+            @media screen and (min-width: 400px) and (orientation: landscape) {
+                body {
+                    font-size: medium;
+                    font-family: sans-serif;
+                    background-color: #08ebeb;
+                    margin: 0 auto;
+                    width: 970px;
+                }
+                div#bloco-paragrafos {
+                    border-style: solid;
+                    border-width: medium;
+                    border-color: #d12c47;
+                    padding: 15px 50px;
+                }
+                h1,
+                h2 {
+                    font-size: 160%;
+                    color: #d12c47;
+                }
+                p {
+                    line-height: 160%;
+                    text-align: justify;
+                }
+                p.destaque {
+                    font-family: serif;
+                    font-style: italic;
+                    font-weight: bold;
+                    color: #fff;
+                    border-style: dashed;
+                    border-width: medium;
+                    border-color: #d12c47;
+                    padding: 15px;
+                    margin: 20px 35px 20px 100px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Desafio 02</h1>
+        <p>
+            Selecionar todos os parágrafos da página e adicionar uma classe de destaque no parágrafo que contém a palavra javascript.
+        </p>
+
+        <h2>Lorem Ipsum</h2>
+        <div id="bloco-paragrafos">
+            <p class="paragrafos">
+                Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Eros donec ac odio tempor orci.
+            </p>
+
+            <p class="paragrafos">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies mi eget mauris pharetra et ultrices. Tempus imperdiet nulla malesuada pellentesque elit.
+            </p>
+
+            <p class="paragrafos">
+                Quis commodo odio aenean sed adipiscing. Amet consectetur adipiscing elit ut aliquam purus sit amet. Dictum sit amet justo donec enim diam vulputate ut. Arcu odio ut sem nulla pharetra diam sit. Dolor magna eget est lorem ipsum dolor sit amet consectetur.
+                JAVASCRIPT Mollis aliquam ut porttitor leo a diam sollicitudin.
+            </p>
+
+            <p class="paragrafos">
+                Et odio pellentesque diam volutpat. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Cum sociis natoque penatibus et magnis dis parturient montes nascetur. Euismod quis viverra nibh cras pulvinar. Porttitor lacus luctus accumsan tortor. Amet
+                venenatis urna cursus eget nunc scelerisque. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.
+            </p>
+
+            <p class="paragrafos">
+                Viverra mauris in aliquam sem fringilla ut morbi. Morbi blandit cursus risus at ultrices. Nisl tincidunt eget nullam non. Ac tortor vitae purus faucibus ornare suspendisse sed. Ullamcorper velit sed ullamcorper morbi tincidunt. Habitant morbi tristique
+                Javascript senectus et netus. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Augue mauris augue neque gravida in fermentum et sollicitudin. Scelerisque eu ultrices vitae auctor eu augue.
+            </p>
+
+            <p class="paragrafos">
+                Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Enim sit amet venenatis urna cursus eget nunc. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. In eu
+                mi bibendum neque. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque. Nullam non nisi est sit amet. Aliquam vestibulum morbi blandit cursus risus at ultrices. Consequat nisl vel pretium lectus quam id. Aliquam eleifend
+                mi in nulla. Magna ac placerat vestibulum lectus mauris ultrices eros in.
+            </p>
+
+            <p class="paragrafos">
+                Sed arcu non odio euismod lacinia at quis.
+            </p>
+
+            <p class="paragrafos">
+                Volutpat blandit aliquam etiam erat velit scelerisque. Dapibus ultrices in iaculis nunc. Etiam erat velit scelerisque in dictum non consectetur a. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Vitae purus faucibus ornare
+                suspendisse sed nisi lacus sed. Sapien nec sagittis aliquam malesuada.
+            </p>
+
+            <p class="paragrafos">
+                Arcu odio ut sem nulla pharetra diam sit amet nisl. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Integer enim neque volutpat ac tincidunt vitae semper quis. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper.
+                Accumsan sit amet nulla facilisi morbi tempus. Habitasse platea dictumst vestibulum rhoncus est. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Ut eu sem integer vitae justo eget magna fermentum.
+            </p>
+        </div>
+
+        <script type="text/javascript">
+            (function(window, document) {
+                'use strict';
+
+                window.addEventListener('load', () => {
+                    var paragrafos = document.querySelectorAll('.paragrafos');
+
+                    paragrafos.forEach(paragrafo => {
+                        var encontrado = paragrafo.innerText.toLowerCase().indexOf('javascript') >= 0;
+
+                        if (encontrado) {
+                            paragrafo.className = 'destaque';
+                        }
+                    });
+                });
+            })(window, document);
+        </script>
+    </body>
+
+</div>

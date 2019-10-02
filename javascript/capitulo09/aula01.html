@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Date - Propriedades e Métodos</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        var data = new Date(); // instanciando um objeto da classe Date
+
+        console.log(data); // exibindo valor do objeto date
+
+        /*
+         * Date - Métodos
+         * getDay() - retorna o dia da semana que começa em 0 (domingo) e vai até sábado (6) do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getDay() é: ', data.getDay());
+
+        /*
+         * Date - Métodos
+         * getDate() - retorna o dia do mês do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getDate() é: ', data.getDate());
+
+        /*
+         * Date - Métodos
+         * getMonth() - retorna o mês que começa em 0 (janeiro) e vai até dezembro (11) do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getMonth() é: ', data.getMonth());
+
+        /*
+         * Date - Métodos
+         * getYear() - retorna o número de anos que se passaram desde 1900
+         */
+        console.log('retorno do método getYear() é: ', data.getYear());
+
+        /*
+         * Date - Métodos
+         * getFullYear() - retorna o ano do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getFullYear() é: ', data.getFullYear());
+
+        /*
+         * Date - Métodos
+         * getHours() - retorna a hora do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getHours() é: ', data.getHours());
+
+        /*
+         * Date - Métodos
+         * getMinutes() - retorna os minutos do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getMinutes() é: ', data.getMinutes());
+
+        /*
+         * Date - Métodos
+         * getSeconds() - retorna os segundos do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getSeconds() é: ', data.getSeconds());
+
+        /*
+         * Date - Métodos
+         * getMilliseconds() - retorna os milisegundos do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getMilliseconds() é: ', data.getMilliseconds());
+
+        /*
+         * Date - Métodos
+         * getTime() - retorna a data no formato timestamp (número de milisegundos desde de 01 Janeiro de 1970) do momento em que o objeto foi instanciado da classe Date
+         */
+        console.log('retorno do método getTime() é: ', data.getTime());
+        console.log('retorno do atalho para gerar a data atual em timestamp: ', +new Date());
+    </script>
+</body>
+
+</html>
