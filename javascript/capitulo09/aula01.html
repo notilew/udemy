@@ -10,69 +10,134 @@
     <h1>Curso JavaScript Completo</h1>
 
     <script type="text/javascript">
-        var data = new Date(); // instanciando um objeto da classe Date
+        var data01 = new Date(); // instanciando um objeto da classe Date com a data atual
+        var data02 = new Date(1569942000000); // instanaciando um objeto da classe Date com uma data específica (timestamp em milisegundos)
 
-        console.log(data); // exibindo valor do objeto date
+        console.log('exibindo data atual: ', data01); // exibindo valor do objeto date
+        console.log('exibindo data específica: ', data02) // exibindo valor do objeto date
+
+        /*
+         * Date - Métodos
+         * setDate() - seta o dia do mês
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setDate() é: ', data02.setDate(10));
+
+        /*
+         * Date - Métodos
+         * setMonth() - seta o mês que começa em 0 (janeiro) e vai até dezembro (11)
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setMonth() é: ', data02.setMonth(0));
+
+        /*
+         * Date - Métodos
+         * setYear() - seta o número de anos que se passaram desde 1900
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setYear() é: ', data02.setYear(1));
+
+        /*
+         * Date - Métodos
+         * setFullYear() - seta o ano
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setFullYear() é: ', data02.setFullYear(2018));
+
+        /*
+         * Date - Métodos
+         * setHours() - seta a hora
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setHours() é: ', data02.setHours(08));
+
+        /*
+         * Date - Métodos
+         * setMinutes() - seta os minutos
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setMinutes() é: ', data02.setMinutes(55));
+
+        /*
+         * Date - Métodos
+         * setSeconds() - seta os segundos
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setSeconds() é: ', data02.setSeconds(30));
+
+        /*
+         * Date - Métodos
+         * setMilliseconds() - seta os milisegundos
+         * observação - retorna o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setMilliseconds() é: ', data02.setMilliseconds(1));
+
+        /*
+         * Date - Métodos
+         * setTime() - seta a data no formato timestamp (número de milisegundos desde de 01 Janeiro de 1970)
+         * observação - seta o timestamp da data em milisegundos
+         */
+        console.log('retorno do método setTime() é: ', data01.setTime(1569942000000));
 
         /*
          * Date - Métodos
          * getDay() - retorna o dia da semana que começa em 0 (domingo) e vai até sábado (6) do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getDay() é: ', data.getDay());
+        console.log('retorno do método getDay() é: ', data01.getDay());
 
         /*
          * Date - Métodos
          * getDate() - retorna o dia do mês do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getDate() é: ', data.getDate());
+        console.log('retorno do método getDate() é: ', data01.getDate());
 
         /*
          * Date - Métodos
          * getMonth() - retorna o mês que começa em 0 (janeiro) e vai até dezembro (11) do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getMonth() é: ', data.getMonth());
+        console.log('retorno do método getMonth() é: ', data01.getMonth());
 
         /*
          * Date - Métodos
          * getYear() - retorna o número de anos que se passaram desde 1900
          */
-        console.log('retorno do método getYear() é: ', data.getYear());
+        console.log('retorno do método getYear() é: ', data01.getYear());
 
         /*
          * Date - Métodos
          * getFullYear() - retorna o ano do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getFullYear() é: ', data.getFullYear());
+        console.log('retorno do método getFullYear() é: ', data01.getFullYear());
 
         /*
          * Date - Métodos
          * getHours() - retorna a hora do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getHours() é: ', data.getHours());
+        console.log('retorno do método getHours() é: ', data01.getHours());
 
         /*
          * Date - Métodos
          * getMinutes() - retorna os minutos do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getMinutes() é: ', data.getMinutes());
+        console.log('retorno do método getMinutes() é: ', data01.getMinutes());
 
         /*
          * Date - Métodos
          * getSeconds() - retorna os segundos do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getSeconds() é: ', data.getSeconds());
+        console.log('retorno do método getSeconds() é: ', data01.getSeconds());
 
         /*
          * Date - Métodos
          * getMilliseconds() - retorna os milisegundos do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getMilliseconds() é: ', data.getMilliseconds());
+        console.log('retorno do método getMilliseconds() é: ', data01.getMilliseconds());
 
         /*
          * Date - Métodos
          * getTime() - retorna a data no formato timestamp (número de milisegundos desde de 01 Janeiro de 1970) do momento em que o objeto foi instanciado da classe Date
          */
-        console.log('retorno do método getTime() é: ', data.getTime());
+        console.log('retorno do método getTime() é: ', data01.getTime());
         console.log('retorno do atalho para gerar a data atual em timestamp: ', +new Date());
     </script>
 </body>
