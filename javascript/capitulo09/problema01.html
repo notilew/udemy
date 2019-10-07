@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 01</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Fazer uma página que mostre quantos dias faltam para o seu próximo aniverśario, se hoje for a data, mostrar mensagem de parabéns.
+    </p>
+
+    <div id="main">
+        <form>
+            <fieldset>
+                <legend>Formulário</legend>
+
+                <div>
+                    <label for="aniversario">Data de Aniversário:</label>
+                    <input type="date" id="aniversario">
+                </div>
+
+                <div>
+                    <button type="button">
+                        Consultar
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+            debugger;
+            window.addEventListener('load', () => {
+                var data = new Date();
+
+                document.getElementById('aniversario').value = data;
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>
