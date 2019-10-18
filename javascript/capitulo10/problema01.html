@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Problema 01</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        O cliente pediu para fazer um pop-up bem irritante que pula na interface do usuário depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos (mesmo que o usuário ainda estava-o lendo). Lembre-se, a ideia é que seja extremamente
+        irritante.
+    </p>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            window.addEventListener('load', () => {
+                var id = window.setTimeout(() => {
+                    window.alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum tincidunt dui, sit amet blandit erat molestie eget. Nullam sed luctus enim, eu dignissim lacus. Nulla enim est, sollicitudin eget laoreet quis, dignissim eu turpis. Mauris laoreet congue bibendum. Proin maximus commodo semper. Morbi ut nisi id metus luctus ultrices. Etiam finibus luctus justo. Integer dignissim, eros vitae tincidunt placerat, ex lacus elementum turpis, vitae fermentum leo neque id leo. Duis tristique ipsum iaculis nulla viverra, a malesuada odio venenatis. Ut a elit sit amet nisl imperdiet venenatis. Maecenas vel consectetur elit, ac gravida dolor. Praesent ut risus urna.');
+                }, 5000);
+
+                window.setTimeout(() => {
+                    window.close();
+                }, 10000);
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>

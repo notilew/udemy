@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Temporizadores</title>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <script type="text/javascript">
+        // Observação - Os temporizadores não são métodos nativos da ECMAScript, em outras palavras, estão presentes nos browsers 'pendurados' no objeto window. Não estão disponíveis no Node.js.
+
+        var n = 0;
+
+        /*
+         * setTimeout(function, milisegundos) - Executa uma função após um determinado tempo em milisegundos
+         * observação - retorna o id do temporizador
+         */
+        var id01 = window.setTimeout(() => {
+            console.log('executando função do setTimeout! id: ', id01);
+        }, 2000);
+
+        /*
+         * clearTimeout(id) - Limpa uma função agendada
+         */
+        // window.clearTimeout(id01);
+
+        /*
+         * setInterval(function, milisegundos) - Executa uma função em intervalos de tempo em milisegundos
+         * observação - retorna o id do temporizador
+         */
+        var id02 = window.setInterval(() => {
+            if (n <= 5) {
+                console.log('executando função do setInterval! n é: ', n++, ' id: ', id02);
+            } else {
+                window.clearInterval(id02);
+                console.log('execução parou!');
+            }
+        }, 3000);
+
+        /*
+         * clearInternal(id) - Limpa um intervalo agendado
+         */
+        // window.clearInterval(id02);
+    </script>
+</body>
+
+</html>
