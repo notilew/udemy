@@ -4,28 +4,79 @@
 <head>
     <meta charset="utf-8">
     <title>Problema 01</title>
+    <style>
+        div#banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.8);
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        div#banner>button.close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Curso JavaScript Completo</h1>
+    <div id="main">
+        <h1>Curso JavaScript Completo</h1>
 
-    <p>
-        O cliente pediu para fazer um pop-up bem irritante que pula na interface do usuário depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos (mesmo que o usuário ainda estava-o lendo). Lembre-se, a ideia é que seja extremamente
-        irritante.
-    </p>
+        <p>
+            O cliente pediu para fazer um pop-up bem irritante que pula na interface do usuário depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos (mesmo que o usuário ainda estava-o lendo). Lembre-se, a ideia é que seja extremamente
+            irritante.
+        </p>
+    </div>
+
+    <div id="banner">
+        <h2>Banner</h2>
+        <button type="button" class="close">
+            X
+        </button>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.
+        </p>
+    </div>
 
     <script type="text/javascript">
         (function(window, document) {
             'use strict';
 
             window.addEventListener('load', () => {
-                var id = window.setTimeout(() => {
-                    window.alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum tincidunt dui, sit amet blandit erat molestie eget. Nullam sed luctus enim, eu dignissim lacus. Nulla enim est, sollicitudin eget laoreet quis, dignissim eu turpis. Mauris laoreet congue bibendum. Proin maximus commodo semper. Morbi ut nisi id metus luctus ultrices. Etiam finibus luctus justo. Integer dignissim, eros vitae tincidunt placerat, ex lacus elementum turpis, vitae fermentum leo neque id leo. Duis tristique ipsum iaculis nulla viverra, a malesuada odio venenatis. Ut a elit sit amet nisl imperdiet venenatis. Maecenas vel consectetur elit, ac gravida dolor. Praesent ut risus urna.');
+                var main = document.querySelector('div#main');
+                var banner = document.querySelector('div#banner');
+
+                window.setTimeout(() => {
+                    main.style.display = 'none';
+                    banner.style.display = 'block';
                 }, 5000);
 
                 window.setTimeout(() => {
-                    window.close();
+                    main.style.display = 'block';
+                    banner.style.display = 'none';
                 }, 10000);
+            });
+
+            var close = document.querySelector('div#banner > button.close');
+
+            close.addEventListener('click', () => {
+                var main = document.querySelector('div#main');
+                var banner = document.querySelector('div#banner');
+
+                main.style.display = 'block';
+                banner.style.display = 'none';
             });
         })(window, document);
     </script>
