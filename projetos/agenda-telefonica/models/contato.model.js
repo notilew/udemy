@@ -1,10 +1,10 @@
 ((window) => {
     'use strict';
 
-    window.pessoa = function(formulario) {
+    window.Contato = function(formulario) {
         this.identificador = undefined;
         this.nome = '';
-        this.contato = new Array();
+        this.contatos = new Array();
 
         if (formulario) {
             var contato = new Object();
@@ -16,7 +16,11 @@
             contato.telefone = formulario.querySelector('#telefone').value;
             contato.email = formulario.querySelector('#email').value;
 
-            this.contato.push(contato);
+            this.contatos.push(contato);
+
+            formulario.querySelector('#nome').value = '';
+            formulario.querySelector('#telefone').value = '';
+            formulario.querySelector('#email').value = '';
         }
     }
 })(window);

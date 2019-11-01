@@ -6,5 +6,6 @@
 
     window.addEventListener('load', () => {
         document.getElementById('cadastro').style.display = 'none';
+        //document.getElementById('lista').style.display = 'none';
     });
 })(window, document);

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desafio 02</title>
+    <style>
+        @media screen and (min-width: 800px) and (orientation: landscape) {
+            div#main {
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                margin: 0 auto;
+                width: 800px;
+            }
+            div#main p {
+                font-size: large;
+                font-weight: bold;
+                padding: 30px;
+                border: solid black thick;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Mostar cronômetro. Faça uma interface contendo um input text e três botões. Ao clicar no primeiro, deve iniciar um cronômetro, o segundo, deve pausar ou continar e o terceiro, deve resetar o cronômetro.
+    </p>
+
+    <div id="main">
+        <div id="cronometro">
+            <h2>Cronômetro Online</h2>
+
+            <form>
+                <fieldset>
+                    <legend>Cronômetro</legend>
+
+                    <div>
+                        <input type="text" id="display" readonly>
+                    </div>
+
+                    <div>
+                        <button type="button" id="btn-iniciar">Iniciar</button>
+                        <button type="button" id="btn-pausar">Pausar</button>
+                        <button type="button" id="btn-resetar">Resetar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            var display = document.getElementById('display');
+            var iniciar = document.getElementById('btn-iniciar');
+            var pausar = document.getElementById('btn-pausar');
+            var resetar = document.getElementById('btn-resetar');
+
+            var id = undefined;
+
+            window.addEventListener('load', () => {
+                display.value = '00:00:00:000';
+            });
+
+            iniciar.addEventListener('click', () => {
+                iniciaCronometro();
+            });
+
+            pausar.addEventListener('click', (e) => {
+                iniciar.disabled = true;
+
+                switch (e.target.textContent.toLowerCase()) {
+                    case 'pausar':
+                        pausaCronometro();
+                        e.target.textContent = 'Continuar';
+                        break;
+
+                    case 'continuar':
+                        iniciaCronometro();
+                        e.target.textContent = 'Pausar';
+                        break;
+                }
+            });
+
+            resetar.addEventListener('click', (e) => {
+                iniciar.disabled = false;
+                pausar.textContent = 'Pausar';
+                display.value = '00:00:00:000'
+            });
+
+            function iniciaCronometro() {
+                id = window.setInterval(() => {
+                    display.value = retornaHoraAtual();
+                }, 1);
+            }
+
+            function pausaCronometro() {
+                window.clearInterval(id);
+            }
+
+            function retornaHoraAtual() {
+                var data = new Date();
+
+                var horas = formataHoraAtual(data.getHours());
+                var minutos = formataHoraAtual(data.getMinutes());
+                var segundos = formataHoraAtual(data.getSeconds());
+                var milisegundos = formataHoraAtual(data.getMilliseconds());
+
+                return horas + ':' + minutos + ':' + segundos + ':' + milisegundos;
+            }
+
+            function formataHoraAtual(valor) {
+                return (valor < 10) ? '0' + valor : valor;
+            }
+        })(window, document);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desafio 01</title>
+    <style>
+        @media screen and (min-width: 800px) and (orientation: landscape) {
+            div#main {
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                margin: 0 auto;
+                width: 800px;
+            }
+            div#main p {
+                font-size: large;
+                font-weight: bold;
+                padding: 30px;
+                border: solid black thick;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Curso JavaScript Completo</h1>
+
+    <p>
+        Mostar relógio. Criar uma função que retorne a hora atual no formato hh:mm:ss. Mostre essa hora em uma div qualquer na tela. Agora execute essa função a cada 1 segundo.
+    </p>
+
+    <div id="main">
+        <p>
+            <strong></strong>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        (function(window, document) {
+            'use strict';
+
+            function retornaTempoFormatado(tempo) {
+                return (tempo < 10) ? '0' + tempo : tempo;
+            }
+
+            function retornaHoraAtual() {
+                var data = new Date();
+
+                var horas = retornaTempoFormatado(data.getHours());
+                var minutos = retornaTempoFormatado(data.getMinutes());
+                var segundos = retornaTempoFormatado(data.getSeconds());
+
+                return horas + ':' + minutos + ':' + segundos;
+            }
+
+            window.addEventListener('load', () => {
+                var strong = document.querySelector('div#main p strong');
+
+                window.setInterval(() => {
+                    strong.textContent = retornaHoraAtual();
+                }, 1000);
+            });
+        })(window, document);
+    </script>
+</body>
+
+</html>

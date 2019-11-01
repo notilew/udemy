@@ -55,28 +55,27 @@
             'use strict';
 
             window.addEventListener('load', () => {
-                var main = document.querySelector('div#main');
                 var banner = document.querySelector('div#banner');
+                var button = document.querySelector('div#banner > button.close');
+                var id = undefined;
 
-                window.setTimeout(() => {
-                    main.style.display = 'none';
+                button.addEventListener('click', ocultarBanner);
+
+                window.setTimeout(exibirBanner, 5000);
+
+                function exibirBanner() {
                     banner.style.display = 'block';
-                }, 5000);
 
-                window.setTimeout(() => {
-                    main.style.display = 'block';
-                    banner.style.display = 'none';
-                }, 10000);
-            });
+                    id = window.setTimeout(ocultarBanner, 5000);
+                }
 
-            var close = document.querySelector('div#banner > button.close');
+                function ocultarBanner() {
+                    button.removeEventListener('click', ocultarBanner);
 
-            close.addEventListener('click', () => {
-                var main = document.querySelector('div#main');
-                var banner = document.querySelector('div#banner');
+                    banner.parentNode.removeChild(banner);
 
-                main.style.display = 'block';
-                banner.style.display = 'none';
+                    window.clearTimeout(id);
+                }
             });
         })(window, document);
     </script>
