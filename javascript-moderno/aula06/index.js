@@ -11,6 +11,7 @@ const string03 = `Wellington`;
 // number -> números.
 const number01 = 10;
 const number02 = 10.52;
+const number03 = 'Wellington'; // utilizando para exemplificar um NaN.
 
 // undefined -> indefinido, não aponta para nenhum local na memória.
 let nome;
@@ -20,6 +21,9 @@ let sobrenome = null;
 
 // boolean -> boleano, valor lógico que pode representar verdadeiro ou falso (true/false).
 let aprovado = true;
+
+// NaN -> not a number, valor retornado quando o engine do JavaScript não conseguir realizar um cálculo.
+console.log(number01 * number03);
 
 /**
  * Observações:
