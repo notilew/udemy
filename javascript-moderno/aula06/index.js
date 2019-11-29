@@ -25,6 +25,9 @@ let aprovado = true;
 // NaN -> not a number, valor retornado quando o engine do JavaScript não conseguir realizar um cálculo.
 console.log(number01 * number03);
 
+// Infinity -> infinito, valor que representa números infinitos.
+console.log(100 / 0);
+
 /**
  * Observações:
  * Não declarar uma variável explicitamente com o valor undefined, esse valor é automaticamente atribuído pelo engine JS;

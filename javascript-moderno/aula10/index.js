@@ -38,7 +38,36 @@ let num06 = 0.1;
 num05 += num06; // 0.8
 num05 += num06; // 0.9
 num05 += num06; // 1.0
+num05 += num06; // 1.1
+num05 += num06; // 1.2
+num05 += num06; // 1.3
+num05 += num06; // 1.4
+num05 += num06; // 1.5
+num05 += num06; // 1.6
+num05 += num06; // 1.7
+num05 += num06; // 1.8
+num05 += num06; // 1.9
+num05 += num06; // 2.0
 
-num05 = Number(num05.toFixed(1));
-console.log(num05);
-console.log(Number.isInteger(num05));
+// solucionando imprecisão utilizando a classe Number e o método toFixed.
+num05 = Number(num05.toFixed(2));
+
+console.log(`solucionando imprecisão 1: ${num05}`);
+console.log(`solucionando imprecisão 1: ${Number.isInteger(num05)}`);
+
+let num07 = 0.7;
+let num08 = 0.1;
+
+// solucionando imprecisão utilizando cálculos
+num07 = (((num07 * 100) + (num08 * 100)) / 100); // 0.8
+num07 = (((num07 * 100) + (num08 * 100)) / 100); // 0.9
+num07 = (((num07 * 100) + (num08 * 100)) / 100); // 1.0
+
+console.log(`solucionando imprecisão 2: ${num07}`);
+console.log(`solucionando imprecisão 2: ${Number.isInteger(num07)}`);
+
+/**
+ * Observações:
+ * Existe uma impressão ao realizar cálculos com casas decimais no JavaScript;
+ * Padrão utilizado para números decimais no JavaScript - IEEE 754-2008;
+ */
