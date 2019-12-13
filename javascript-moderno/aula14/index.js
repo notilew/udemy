@@ -9,13 +9,17 @@ const pessoa01 = {
     sobrenome: 'felix',
     idade: 30,
     exibeMensagem() {
-        console.log(`${this.nome} diz oi..., minha idade é ${this.idade}`);
+        console.log(`${this.nome} ${this.sobrenome} diz oi..., minha idade é ${this.idade}`);
     },
     incrementaIdade() {
         this.idade++;
     }
 };
 
+console.log(pessoa01.exibeMensagem());
+console.log(pessoa01.incrementaIdade());
+console.log(pessoa01.exibeMensagem());
+console.log(pessoa01.incrementaIdade());
 console.log(pessoa01.exibeMensagem());
 console.log(pessoa01.incrementaIdade());
 console.log(pessoa01.exibeMensagem());
