@@ -32,3 +32,9 @@
 
 * Permite que o node execute códigos JavaScript dentro do VSCode.
     - code runner
+
+* Exibe métricas de codificação do usuário.
+    - code time
+
+* Força a utilização de padrões JavaScript na escrita de código.
+    - standardjs
