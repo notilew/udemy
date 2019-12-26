@@ -1,0 +1,114 @@
+@media screen and (min-width: 600px) and (orientation: landscape) {
+    * {
+        box-sizing: border-box;
+        outline: 0;
+    }
+    
+    body {
+        font-size: smaller;
+        font-family: 'Open Sans Regular', sans-serif;
+        background-color: var(--primary-color);
+        line-height: 160%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 160%;
+        font-family: 'Open Sans Bold', sans-serif;
+        text-align: center;
+    }
+    
+    p {
+        text-align: justify;
+    }
+    
+    div#main {
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        width: 640px;
+    }
+    
+    table {
+        margin: 0 auto;
+    }
+
+    td {
+        padding: 0 5px;
+        border: thin solid #000;
+    }
+
+    td.imc {
+        text-align: left;
+    }
+
+    td.descricao {
+        text-align: right;
+    }
+
+    form label,
+    form input,
+    form button {
+        display: block;
+        width: 100%;
+    }
+    
+    form input {
+        font-size: 105%;
+        border-radius: 4px;
+        padding: 10px 0;
+        margin: 0 0 15px 0;
+    }
+    
+    form input:focus {
+        outline-width: medium;
+        outline-style: solid;
+        outline-color: var(--primary-color);
+    }
+    
+    form button {
+        color: var(--secondary-color);
+        cursor: pointer;
+        font-size: 100%;
+        font-weight: bold;
+        border: none;
+        background-color: var(--primary-color);
+        border-radius: 5px;
+        padding: 10px 0;
+        margin: 40px 0 0 0;
+    }
+    
+    form button:hover {
+        background-color: var(--third-color);
+    }
+    
+    form button:active {
+        color: #000;
+        background-color: var(--secondary-color);
+    }
+
+    p.erro {
+        color: var(--secondary-color);
+        font-weight: bold;
+        background-color: var(--fourth-color);
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    p.sucesso {
+        color: var(--secondary-color);
+        font-weight: bold;
+        background-color: var(--fifth-color);
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+}

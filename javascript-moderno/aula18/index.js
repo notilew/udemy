@@ -35,7 +35,7 @@ console.log(0 && true);
 console.log('wellington' && true && '');
 console.log(0 || null || undefined || 'wellington felix' || true);
 
-// utilizando valores lógicos para realizar uma condicional - short-circuit (curto-circuito).
+// utilizando valores lógicos para realizar uma condicional - short-circuit (curto-circuito) com &&.
 function msg() {
     return 'a mensagem é...';
 }
@@ -50,7 +50,11 @@ exibir = true;
 
 console.log(`avaliação curto-circuito ${exibir && msg()}`);
 
+// utilizando valores lógicos para realizar uma condicional - short-circuit (curto-circuito) com ||.
+const corUsuario = 'black';
+const corPadrao = corUsuario || 'red';
 
+console.log(corPadrao);
 
 /**
  * Observações:

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Modelo HTML - Exercícios</title>
+
+    <link type="text/css" rel="stylesheet" href="assets/css/fonts.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/colors.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="main">
+        <h1>Aula 20</h1>
+
+        <table>
+            <caption>Tabela do IMC</caption>
+            <thead>
+                <tr>
+                    <th>IMC</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="imc">Menor que 18,5</td>
+                    <td class="descricao">Abaixo do Peso</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 18,5 e 24,9</td>
+                    <td class="descricao">Peso Normal</td>
+                </tr>
+                <tr>
+                    <td>Entre 25 e 29,9</td>
+                    <td class="descricao">Sobrepeso</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 30 e 34,9</td>
+                    <td class="descricao">Obsidade Grau I</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 35 e 39,9</td>
+                    <td class="descricao">Obsidade Grau II</td>
+                </tr>
+                <tr>
+                    <td class="imc">Maior que 40</td>
+                    <td class="descricao">Obsidade Grau III</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Calcule o seu IMC</h2>
+
+        <form action="#" method="post">
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso">
+
+            <label for="altura">Altura:</label>
+            <input type="text" id="altura">
+
+            <button type="submit">
+                Calcular
+            </button>
+        </form>
+
+        <div id="resultado">
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
