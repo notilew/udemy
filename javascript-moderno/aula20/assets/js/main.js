@@ -1,14 +1,26 @@
+function alteraHTML(classe, mensagem) {
+    const p = document.createElement('p');
+
+    p.textContent = mensagem;
+    p.classList.add(classe);
+
+    const div = document.querySelector('div#resultado');
+    
+    div.innerHTML = '';
+    div.appendChild(p);
+}
+
 function validaDados(peso, altura) {
     let validacao = true;
 
     if (peso === 0 || Number.isNaN(peso)) {
         validacao = false;
 
-        document.querySelector('div#resultado').innerHTML = '<p class="erro">Peso Inválido!</p>';
+        alteraHTML('erro', 'Peso Inválido!');
     } else if (altura === 0 || Number.isNaN(altura)) {
         validacao = false;
 
-        document.querySelector('div#resultado').innerHTML = '<p class="erro">Altura Inválida!</p>';
+        alteraHTML('erro', 'Altura Inválida!');
     }
 
     return validacao;
@@ -35,7 +47,7 @@ function verificaResultado(imc) {
         resultado = 'Obsidade Grau III';
     }
 
-    document.querySelector('div#resultado').innerHTML = `<p class="sucesso">Seu <span>IMC</span> é ${imc} - (${resultado})`;
+    alteraHTML('sucesso', `Seu IMC é ${imc} - (${resultado})`);
 }
 
 function escopoLocal() {
@@ -43,9 +55,9 @@ function escopoLocal() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        const peso = Number(form.querySelector('#peso').value);
-        const altura = Number(form.querySelector('#altura').value);
+        
+        const peso = Number(e.target.querySelector('#peso').value);
+        const altura = Number(e.target.querySelector('#altura').value);
 
         if (validaDados(peso, altura)) {
             verificaResultado(calculaIMC(peso, altura));

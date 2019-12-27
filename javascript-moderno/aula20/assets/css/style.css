@@ -80,7 +80,7 @@
         font-weight: bold;
         border: none;
         background-color: var(--primary-color);
-        border-radius: 5px;
+        border-radius: 4px;
         padding: 10px 0;
         margin: 40px 0 0 0;
     }
@@ -98,8 +98,8 @@
         color: var(--secondary-color);
         font-weight: bold;
         background-color: var(--fourth-color);
-        border-radius: 5px;
-        padding: 10px;
+        border-radius: 4px;
+        padding: 7px;
         text-align: center;
     }
 
@@ -107,8 +107,8 @@
         color: var(--secondary-color);
         font-weight: bold;
         background-color: var(--fifth-color);
-        border-radius: 5px;
-        padding: 10px;
+        border-radius: 4px;
+        padding: 7px;
         text-align: center;
     }
 }
