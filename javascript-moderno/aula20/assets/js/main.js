@@ -5,25 +5,33 @@ function alteraHTML(classe, mensagem) {
     p.classList.add(classe);
 
     const div = document.querySelector('div#resultado');
-    
+
     div.innerHTML = '';
     div.appendChild(p);
 }
 
-function validaDados(peso, altura) {
-    let validacao = true;
+function validaPeso(peso) {
+    if (peso !== '') {
+        let validacao = true;
 
-    if (peso === 0 || Number.isNaN(peso)) {
-        validacao = false;
+        if (peso === 0 || Number.isNaN(peso)) validacao = false;
 
-        alteraHTML('erro', 'Peso Inválido!');
-    } else if (altura === 0 || Number.isNaN(altura)) {
-        validacao = false;
-
-        alteraHTML('erro', 'Altura Inválida!');
+        return validacao;
+    } else {
+        alert('Não foi possível validar o peso! Peso não detectado.');
     }
+}
 
-    return validacao;
+function validaAltura(altura) {
+    if (altura !== '') {
+        let validacao = true;
+
+        if (altura === 0 || Number.isNaN(altura)) validacao = false;
+
+        return validacao;
+    } else {
+        alert('Não foi possível validar a altura! Altura não detectada.');
+    }
 }
 
 function calculaIMC(peso, altura) {
@@ -31,23 +39,25 @@ function calculaIMC(peso, altura) {
 }
 
 function verificaResultado(imc) {
-    let resultado;
-    
-    if (imc <= 18.4) {
-        resultado = 'Abaixo do Peso';
-    } else if (imc <= 24.9) {
-        resultado = 'Peso Normal';
-    } else if (imc <= 29.9) {
-        resultado = 'Sobrepeso';
-    } else if (imc <= 34.9) {
-        resultado = 'Obsidade Grau I';
-    } else if (imc <= 30.9) {
-        resultado = 'Obsidade Grau II';
-    } else {
-        resultado = 'Obsidade Grau III';
-    }
+    if (imc) {
+        const descricoes = [
+            'Abaixo do Peso',
+            'Peso Normal',
+            'Sobrepeso',
+            'Obsidade Grau I',
+            'Obsidade Grau II',
+            'Obsidade Grau III'
+        ];
 
-    alteraHTML('sucesso', `Seu IMC é ${imc} - (${resultado})`);
+        if (imc <= 18.4) return descricoes[0];
+        if (imc <= 24.9) return descricoes[1];
+        if (imc <= 29.9) return descricoes[2];
+        if (imc <= 34.9) return descricoes[3];
+        if (imc <= 39.9) return descricoes[4];
+        if (imc >= 40.0) return descricoes[5];
+    } else {
+        alert('Não foi possível verificar o resultado! IMC não detectado.');
+    }
 }
 
 function escopoLocal() {
@@ -55,13 +65,26 @@ function escopoLocal() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        const peso = Number(e.target.querySelector('#peso').value);
-        const altura = Number(e.target.querySelector('#altura').value);
 
-        if (validaDados(peso, altura)) {
-            verificaResultado(calculaIMC(peso, altura));
+        const peso = Number(e.target.querySelector('#peso').value);
+        const altura = Number(e.target.querySelector('#altura').value); debugger;
+
+        if (!validaPeso(peso)) {
+            alteraHTML('erro', 'Peso Inválido!');
+
+            return;
+        };
+
+        if (!validaAltura(altura)) {
+            alteraHTML('erro', 'Altura Inválida!');
+
+            return;
         }
+
+        const imc = calculaIMC(peso, altura);
+        const resultado = verificaResultado(imc);
+
+        alteraHTML('sucesso', `Seu IMC é ${imc} - (${resultado})`);
     });
 }
 
