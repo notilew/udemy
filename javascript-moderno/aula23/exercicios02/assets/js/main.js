@@ -34,20 +34,7 @@ function verificaMes(mes) {
     if (mes !== '') {
         const meses = [`Janeiro`, `Fevereiro`, `Março`, `Abril`, `Maio`, `Junho`, `Julho`, `Agosto`, `Setembro`, `Outubro`, `Novembro`, `Dezembro`];
 
-        switch (mes) {
-            case 0: return meses[0];
-            case 1: return meses[1];
-            case 2: return meses[2];
-            case 3: return meses[3];
-            case 4: return meses[4];
-            case 5: return meses[5];
-            case 6: return meses[6];
-            case 7: return meses[7];
-            case 8: return meses[8];
-            case 9: return meses[9];
-            case 10: return meses[10];
-            case 11: return meses[11];
-        }
+        return meses[mes];
     } else {
         alert(`Não foi possível verificar o mês! Mês não detectado.`);
     }
@@ -57,15 +44,7 @@ function verificaDiaDaSemana(dia) {
     if (dia !== '') {
         const dias = [`Domingo`, `Segunda-Feira`, `Terça-Feira`, `Quarta-Feira`, `Quinta-Feira`, `Sexta-Feira`, `Sábado`];
 
-        switch (dia) {
-            case 0: return dias[0];
-            case 1: return dias[1];
-            case 2: return dias[2];
-            case 3: return dias[3];
-            case 4: return dias[4];
-            case 5: return dias[5];
-            case 6: return dias[6];
-        }
+        return dias[dia];
     } else {
         alert(`Não foi possível verificar o dia da semana! Dia da semana não detectado.`);
     }
@@ -73,7 +52,9 @@ function verificaDiaDaSemana(dia) {
 
 function retornaData() {
     const date = new Date();
-    const data = `${verificaDiaDaSemana(date.getDay())}, ${formataDia(date.getDate())} de ${verificaMes(date.getMonth())} de ${date.getFullYear()} ${formataHoras(date.getHours())}:${formataMinutos(date.getMinutes())}:${formataSegundos(date.getSeconds())}`;
+    const data = `${verificaDiaDaSemana(date.getDay())}, 
+        ${formataDia(date.getDate())} de ${verificaMes(date.getMonth())} de ${date.getFullYear()} 
+        ${formataHoras(date.getHours())}:${formataMinutos(date.getMinutes())}:${formataSegundos(date.getSeconds())}`;
 
     return data;
 }
