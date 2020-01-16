@@ -30,6 +30,14 @@ const [primeiro, segundo, terceiro, , , sexto, ...restante] = numeros02;
 console.log(`utilizando variáveis: ${primeiro}, ${segundo}, ${terceiro}, ${sexto}`);
 console.log(`utilizando variáveis, demais números: ${restante}`);
 
+// reatribuindo valores via desestruturação utilizando arrays multidimensionais.
+// índices              0          1          2
+// índices           0  1  2    0  1  2    0  1  2
+const numeros03 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+const [lista01, lista02, lista03] = numeros03;
+
+console.log(`utilizando array multidimensional: ${lista02[0]}`);
+
 /**
  * Observações:
  * O operador ... ao final da desestruturação é chamado de rest, ele retorna os valores restantes dos índices que não foram retornados para as variáveis declaradas;
