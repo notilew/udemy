@@ -67,7 +67,7 @@ function escopoLocal() {
         e.preventDefault();
 
         const peso = Number(e.target.querySelector('#peso').value);
-        const altura = Number(e.target.querySelector('#altura').value); debugger;
+        const altura = Number(e.target.querySelector('#altura').value);
 
         if (!validaPeso(peso)) {
             alteraHTML('erro', 'Peso Inválido!');

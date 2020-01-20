@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    font-size: medium;
+    font-family: 'Mont Serrat Regular', sans-serif;
+    line-height: 1.6em;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Mont Serrat Bold', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgb(215, 215, 215);
+    padding-bottom: 1.5%;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+@media screen and (min-device-width: 800px) and (orientation: landscape) {
+    
+    div#container {
+        margin: 0px auto;
+        width: 90%;
+    }
+    
+    div#header {
+        background-color: rgb(88, 172, 250);
+        border-radius: 5px;
+        padding: 1.5%;
+    }
+    
+    div#main {
+        float: left;
+        padding: 1.5%;
+        margin: 1% 1% 1% 0;
+        width: 65%;
+    }
+    
+    div#aside {
+        border-style: solid;
+        border-width: thin;
+        border-color: rgb(215, 215, 215);
+        border-radius: 1em;
+        padding: 1.5%;
+        margin: 1% 0 1% 66%;
+    }
+
+    div#aside div.section-articles p {
+        padding: 1.8%;
+    }
+
+    div#aside div.section-articles p a {
+        text-decoration: none;
+    }
+    
+    div#footer {
+        background-color: rgb(88, 172, 250);
+        border-radius: 5px;
+        clear: left;
+        padding: 1.5%;
+    }
+
+    form label,
+    form input,
+    form button {
+        display: block;
+    }
+
+    form label {
+        width: 100%;
+    }
+
+    form input {
+        border-radius: 1em;
+        padding: 10px 0;
+        margin: 0 0 15px 0;
+        width: 50%;
+    }
+
+    form button {
+        background-color: rgb(88, 172, 250);
+        border: none;
+        border-radius: 1em;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-weight: bold;
+        padding: 10px 15px;
+        margin: 40px 0 0 0;
+        width: 25%;
+    }
+
+    form button:hover {
+        background-color: rgb(129, 190, 247);
+    }
+
+    form button:active {
+        background-color: rgb(206, 227, 246);
+    }
+
+    div.section table {
+        margin: 0 auto;
+    }
+
+    div.section table thead tr th {
+        padding-right: 5.5em;
+    }
+
+}

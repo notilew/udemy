@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Mont Serrat Bold';
+    src: url('../fontes/montserrat-bold.ttf');
+}
+
+@font-face {
+    font-family: 'Mont Serrat Italic';
+    src: url('../fontes/montserrat-italic.ttf');
+}
+
+@font-face {
+    font-family: 'Mont Serrat Light';
+    src: url('../fontes/montserrat-light.ttf');
+}
+
+@font-face {
+    font-family: 'Mont Serrat Regular';
+    src: url('../fontes/montserrat-regular.ttf');
+}
+
+@font-face {
+    font-family: 'Mont Serrat Thin';
+    src: url('../fontes/montserrat-thin.ttf');
+}
