@@ -139,7 +139,11 @@ p {
     }
 
     div.section table thead tr th {
-        padding-right: 5.5em;
+        padding: 0 5em;
+    }
+
+    div.section table tbody tr td {
+        padding: 0.8em 5em;
     }
 
 }

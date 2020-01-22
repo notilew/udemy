@@ -1,5 +1,5 @@
 /**
- * For Clássico.
+ * For Clássico, For In e For Of.
  * Aprendendo a utilizar a estrutura de repetição for.
  */
 
@@ -44,6 +44,11 @@ const frutas = ['maça', 'laranja', 'pêra', 'uva', 'abacate'];
 
 for (let i = 0; i < frutas.length; i++) {
     console.log(frutas[i]);
+}
+
+// for in.
+for (const chave in frutas) {
+    console.log(`índice/chave: ${chave} valor: ${frutas[chave]}`);
 }
 
 /**
