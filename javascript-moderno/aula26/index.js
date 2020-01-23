@@ -51,7 +51,29 @@ for (const chave in frutas) {
     console.log(`índice/chave: ${chave} valor: ${frutas[chave]}`);
 }
 
+const pessoa = {
+    nome: 'wellington',
+    sobrenome: 'felix',
+    idade: 30,
+    peso: 75.5
+};
+
+for (const chave in pessoa) {
+    console.log(`${chave}: ${pessoa[chave]}`);
+}
+
+// for of.
+for (const valor of frutas) {
+    console.log(valor);
+}
+
+// exibindo valor de objeto utilizando a sintaxe ['índice'].
+console.log(`exibindo valor de objeto: ${pessoa['nome']}`);
+
 /**
  * Observações:
  * O for possui 3 expressões obrigatórias, variável inicial, condição de parada e incremento;
+ * No for in, a variável informada no for conterá a chave do índice do array ou objeto;
+ * No for of, a variável informada no for conterá o valor do array;
+ * É possível utilizar a sintaxe ['índice'] para pegar um valor em um array ou objeto;
  */
