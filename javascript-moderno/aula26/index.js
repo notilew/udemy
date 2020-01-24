@@ -73,7 +73,8 @@ console.log(`exibindo valor de objeto: ${pessoa['nome']}`);
 /**
  * Observações:
  * O for possui 3 expressões obrigatórias, variável inicial, condição de parada e incremento;
- * No for in, a variável informada no for conterá a chave do índice do array ou objeto;
- * No for of, a variável informada no for conterá o valor do array;
+ * No for in, a variável informada no for conterá a chave do índice do(a) string, array ou objeto;
+ * No for of, a variável informada no for conterá o valor do(a) string ou array;
  * É possível utilizar a sintaxe ['índice'] para pegar um valor em um array ou objeto;
+ * Não é possível utilizar for of com objetos;
  */
