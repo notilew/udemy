@@ -4,12 +4,26 @@
  */
 
 // while.
-const nome = 'wellington aparecido felix';
+const nome = 'wellington aparecido felix\n';
 let i = 0;
 
 while (i < nome.length) {
     console.log(nome[i]);
     i++;
+}
+
+const min = 1;
+const max = 50;
+
+function geraNumeroAleatorio(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+let numero = geraNumeroAleatorio(min, max);
+
+while (numero !== 25) {
+    numero = geraNumeroAleatorio(min, max);
+    console.log(numero);
 }
 
 /**
