@@ -21,12 +21,19 @@ function geraNumeroAleatorio(min, max) {
 
 let numero = geraNumeroAleatorio(min, max);
 
-while (numero !== 25) {
+/* while (numero !== 25) {
     numero = geraNumeroAleatorio(min, max);
     console.log(numero);
-}
+} */
+
+do {
+    numero = geraNumeroAleatorio(min, max);
+    console.log(numero);
+} while (numero !== 25);
 
 /**
  * Observações:
+ * O laço while verifica a expressão antes de começar a iterar;
+ * O laço do while itera uma primeira vez e depois verifica a expressão;
  * Os laçõs while e do while são utilizados quando não se sabe quantas vezes terá que iterar sobre uma massa de dados.
  */
