@@ -38,6 +38,8 @@ var nome04 = 'Fábia';
 
 function msg() {
     var nome05 = 'Paola';
+
+    console.log(nome04);
     console.log(nome05);
 
     if (true) {

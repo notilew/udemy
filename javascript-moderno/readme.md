@@ -38,3 +38,7 @@
 
 * Força a utilização de padrões JavaScript na escrita de código.
     - standardjs
+
+
+
+* assistir aula de escopo de variáveis.    

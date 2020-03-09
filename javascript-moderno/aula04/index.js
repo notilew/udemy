@@ -16,8 +16,8 @@ console.log(resultado);
 
 /**
  * Observações:
- *  Não utilizar var para criar variáveis;
- *  Não redeclarar a mesma variável com let;
+ *  Não utilizar var para criar constantes;
+ *  Não redeclarar a mesma constante com const;
  *  Não declarar uma constante e depois inicializá-la;
  *  Sempre que possível, utilizar const ao invés de let para manter o valor original armazenado;
  */
