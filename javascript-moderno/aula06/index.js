@@ -1,6 +1,6 @@
 /**
  * Tipos Primitivos de Dados do JavaScript.
- * Analisandos os tipos de dados primitivos que o JavaScript possui.
+ * Analisando os tipos de dados primitivos que o JavaScript possui.
  */
 
 // string -> texto.
